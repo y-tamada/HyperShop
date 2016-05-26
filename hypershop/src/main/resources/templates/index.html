@@ -2,9 +2,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!--/* script start 
+<script src="http://localhost:8080/js/lib/react.js"></script>
+<script src="http://localhost:8080/js/lib/react-dom.js"></script>
+<script src="http://localhost:8080/js/lib/react.min.js"></script>
+<script src="http://localhost:8080/js/lib/react-dom.min.js"></script>
+<script src="http://localhost:8080/js/lib/react-with-addons.js"></script>
+<script src="http://localhost:8080/js/lib/react-dom.js"></script>
+<script src="http://localhost:8080/js/lib/react-with-addons.min.js"></script>
+<script src="http://localhost:8080/js/lib/react-dom.min.js"></script>
+*/-->
+
+<script src="http://hypershop.mybluemix.net/js/lib/react.js"></script>
+<script src="http://hypershop.mybluemix.net/js/lib/react-dom.js"></script>
+<script src="http://hypershop.mybluemix.net/js/lib/react.min.js"></script>
+<script src="http://hypershop.mybluemix.net/js/lib/react-dom.min.js"></script>
+<script src="http://hypershop.mybluemix.net/js/lib/react-with-addons.js"></script>
+<script src="http://hypershop.mybluemix.net/js/lib/react-dom.js"></script>
+<script src="http://hypershop.mybluemix.net/js/lib/react-with-addons.min.js"></script>
+<script src="http://hypershop.mybluemix.net/js/lib/react-dom.min.js"></script>
+
+<script type="text/jsx" src="http://hypershop.mybluemix.net/js/index.js"></script>
 <title>Hyper Shop</title>
 </head>
 <body>
-	<h1 th:text="${message}">hellow world!!!</h1>
+	<header>
+		<h1><img th:src="@{http://hypershop.mybluemix.net/image/logo/main_logo.png}" alt="HyperShop"/></h1>
+	</header>
+	<section class="searchArea">
+		<div>
+			<input type="text" name="searchBox"/>
+			<a href="javascript:void(0);" onclick="alert('wao!')">Search!</a>
+		</div>
+	</section>
 </body>
 </html>
