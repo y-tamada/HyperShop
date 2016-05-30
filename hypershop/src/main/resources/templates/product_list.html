@@ -1,0 +1,35 @@
+			<ul class="productList">
+				<li class="productInfo" th:each="productInfo : ${itemList}" th:object="${productInfo.item}" th:attr="data-value=${productInfoStat.index}">
+					<a class="blockLevelLink" href="javascript:void(0);" th:href="*{itemUrl}">
+						<div class="productLink">
+							<div class="mainImage"><img alt="ps4" th:src="*{mediumImageUrls[0].imageUrl}"/></div>
+							<ul class="thumbnailList">
+								<li th:each="smallImage : *{smallImageUrls}" class="thumbnail" th:if="${smallImageStat.index} gt 0 and ${smallImageStat.index} lt 3">
+									<img alt="ps4" th:src="${smallImage.imageUrl}"/>
+								</li>
+								<li th:remove="all" class="thumbnail">
+									<img alt="ps4" th:src="@{/image/dummy/64x64-r.png}"/>
+								</li>
+							</ul>
+							<div class="productDetail">
+								<h3 class="productName" th:text="*{itemName}">ps4</h3>
+								<div class="horizontalBox">
+									<div class="shopName" th:text="*{shopName}">HyperShop</div>
+									<div class="price">¥<span th:text="*{#numbers.formatInteger(itemPrice,1,'COMMA')}">1000</span></div>	
+								</div>
+								<div class="genre" th:text="*{genreId}">game</div>
+								<div class="catchcopy" th:text="*{catchcopy}">this is game</div>
+							</div>
+						</div>
+						<div class="ratingStarArea">
+							<select name="ratingStar">
+							  <option value="3" th:value="*{#numbers.formatInteger(reviewAverage,1,'POINT')}">3</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
+							  <option value="4">4</option>
+							  <option value="5">5</option>
+							</select>
+						</div>
+					</a>
+				</li>
+			</ul>

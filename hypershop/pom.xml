@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 
 	<name>hypershop</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Hyper Shop !!!</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -38,6 +38,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
     		<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
 		</dependency>
 	</dependencies>
 	

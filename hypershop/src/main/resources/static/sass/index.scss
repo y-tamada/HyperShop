@@ -1,0 +1,159 @@
+$hy-blue:#03c;
+$hy-green:#1BC1A0;
+$hy-red:#ff4d52;
+$hy-gray:#666;
+$hy-black:#222;
+$hy-white:whitesmoke;
+$hy-yellow:#F2C200;
+
+$l-img-size:128px;
+$s-img-size:64px;
+$contents-size:1200px;
+$panel-width:600px;
+$panel-height:155px;
+
+body{
+	background-color: $hy-white;
+	a{
+		text-decoration: none;
+	}
+	a.blockLevelLink{
+		display: block;
+	}
+	.wrapper{
+		width: $contents-size;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.horizontalBox{
+		display: flex;
+	}
+}
+
+
+.searchArea{
+	height: 50px;
+	display: flex;
+	div{
+		height: inherit;
+    line-height: 46px;
+	}
+	.searchInput{
+		width: 72.8%;
+		input{
+			height: 88%;
+    	width: 99%;
+		}
+
+	}
+	.searchBtn{
+		width: 27.2%;
+		background-color: $hy-gray;
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+			color: $hy-white;
+			text-align: center;
+			font-size: large;
+		}
+		a:hover{
+			background-color: $hy-black;
+		}
+	}
+}
+
+.productListArea{
+	.productLink{
+		color: $hy-white;
+		display: flex;
+	}
+	.productInfo{
+		width:$panel-width;
+		height: $panel-height;
+	}
+	.mainImage{
+		height: $l-img-size;
+		width: $l-img-size;
+	}
+	.thumbnail{
+		width: $s-img-size;
+		height: $s-img-size;
+	}
+	.productList{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.productDetail{
+		margin-left: 1em;
+		width: 377px;
+		.productName{
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			margin-top: 2px;
+			display: block;
+			font-size: large;
+		}
+		.shopName{
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			margin-top: 11px;
+			display: block;
+			font-size: small;
+			width: 70%;
+		}
+		.price{	
+			margin-top: 15px;
+			font-size: larger;
+			width: 30%;
+			text-align: right;
+		}
+		.genre{
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			margin-top: 0px;
+			display: block;
+			font-size: small;
+		}
+		.catchcopy{
+			/*display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 4;*/
+			display: table-cell;
+			margin-top: 8px;
+			line-height: 16px;
+			font-size: smaller;
+			word-break: break-all;
+			word-wrap: break-word;
+			overflow: hidden;
+			height: 72px;
+			vertical-align:middle; 
+		}
+	}
+	.ratingStarArea{
+		margin-left: 5px;
+		margin-top: -7px;
+	}
+}
+
+.panelBlue{
+	background-color: $hy-blue;
+}
+
+.panelGreen{
+	background-color: $hy-green;
+}
+
+.panelYellow{
+	background-color: $hy-yellow;
+}
+
+.panelRed{
+	background-color: $hy-red;
+}
+
+footer{
+	height: 200px;
+}
