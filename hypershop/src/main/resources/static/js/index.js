@@ -4,6 +4,8 @@
 
 $(document).ready(function(){
 	
+	
+	
 	$("#productSearch").on("click", function(){
 		$.ajax({
 			type: 'post',
@@ -46,3 +48,10 @@ $(document).ready(function(){
 		});
 	});
 });
+
+function enterSearch(code){
+	//エンターキー押下なら
+	if(13 === code){
+		$("#productSearch").trigger("click");
+	}
+}

@@ -1,6 +1,6 @@
 			<ul class="productList">
 				<li class="productInfo" th:each="productInfo : ${itemList}" th:object="${productInfo.item}" th:attr="data-value=${productInfoStat.index}">
-					<a class="blockLevelLink" href="javascript:void(0);" th:href="*{itemUrl}">
+					<a class="blockLevelLink" href="javascript:void(0);" th:href="*{affiliateUrl}">
 						<div class="productLink">
 							<div class="mainImage"><img alt="ps4" th:src="*{mediumImageUrls[0].imageUrl}"/></div>
 							<ul class="thumbnailList">

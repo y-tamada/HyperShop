@@ -23,6 +23,7 @@ import com.hypershop.app.vo.SearchConditionVo;
 public class ProductInfoServiceImpl implements ProductInfoService{
 	
 	private static final String DEVELOPER_ID = "1048080648711546146";
+	private static final String AFFILIATE_ID = "14f3b44a.135864d6.14f3b44b.88c14e37";
 
 	@Override
 	public ProductInfoListVo getProductInfo(Locale locale, SearchConditionVo searchConditionVo) {
@@ -42,13 +43,10 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 			if(StringUtils.isNotBlank(searchConditionVo.getGenreId())){
 				requestPath.append("&genreId=" + URLEncoder.encode(searchConditionVo.getGenreId(), "UTF-8"));
 			}
-			// アイテムコード
-			//	    		  + "&itemCode=" + URLEncoder.encode(searchConditionVo.getItemCode(), "UTF-8")
-			// ショップコード
-			//	    		  + "&shopCode=" + URLEncoder.encode(searchConditionVo.getShopCode(), "UTF-8")
 			// アプリID
-			//	    		  + "&applicationId=" + messageSource.getMessage(DEVELOPER_ID, null, locale);]
 			requestPath.append("&applicationId=" + DEVELOPER_ID);
+			// アフィリエイトID
+			requestPath.append("&affiliateId=" + AFFILIATE_ID);
 
 			// リクエスト送信
 			URL requestUrl = new URL(requestPath.toString());
