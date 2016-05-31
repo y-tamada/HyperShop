@@ -19,6 +19,7 @@ body .horizontalBox {
 .searchArea {
   height: 50px;
   display: flex;
+  margin-bottom: 10px;
 }
 .searchArea div {
   height: inherit;
@@ -45,94 +46,6 @@ body .horizontalBox {
 }
 .searchArea .searchBtn a:hover {
   background-color: #222;
-}
-
-.productListArea .productLink {
-  color: whitesmoke;
-  display: flex;
-}
-.productListArea .productInfo {
-  width: 600px;
-  height: 155px;
-}
-.productListArea .mainImage {
-  height: 128px;
-  width: 128px;
-}
-.productListArea .thumbnail {
-  width: 64px;
-}
-.productListArea .productList {
-  display: flex;
-  flex-wrap: wrap;
-}
-.productListArea .productDetail {
-  margin-left: 1em;
-  width: 377px;
-}
-.productListArea .productDetail .productName {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  margin-top: 2px;
-  display: block;
-  font-size: large;
-}
-.productListArea .productDetail .shopName {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  margin-top: 11px;
-  display: block;
-  font-size: small;
-  width: 70%;
-}
-.productListArea .productDetail .price {
-  margin-top: 15px;
-  font-size: larger;
-  width: 30%;
-  text-align: right;
-}
-.productListArea .productDetail .genre {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  margin-top: 0px;
-  display: block;
-  font-size: small;
-}
-.productListArea .productDetail .catchcopy {
-  /*display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;*/
-  display: table-cell;
-  margin-top: 8px;
-  line-height: 16px;
-  font-size: smaller;
-  word-break: break-all;
-  word-wrap: break-word;
-  overflow: hidden;
-  height: 72px;
-  vertical-align: middle;
-}
-.productListArea .ratingStarArea {
-  margin-left: 5px;
-  margin-top: -7px;
-}
-
-.panelBlue {
-  background-color: #03c;
-}
-
-.panelGreen {
-  background-color: #1BC1A0;
-}
-
-.panelYellow {
-  background-color: #F2C200;
-}
-
-.panelRed {
-  background-color: #ff4d52;
 }
 
 footer {

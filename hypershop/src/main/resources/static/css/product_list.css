@@ -1,0 +1,69 @@
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.productList .mainInfo {
+  margin: 20px 40px 30px 40px;
+}
+.productList .mainInfo p {
+  width: 215px;
+}
+.productList .mainInfo .mainImage img {
+  width: 215;
+  height: 215;
+}
+.productList .mainInfo .shopName {
+  margin: 0;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #808080;
+  font-size: 12px;
+}
+.productList .mainInfo .productName {
+  margin: 0;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #808080;
+  font-size: 12px;
+}
+.productList .mainInfo .price {
+  margin: 6px 0 0 0;
+  font-size: 15px;
+  line-height: 1.1;
+}
+.productList .mainInfo .tax {
+  font-size: 10px;
+  margin: 0 0 0 2px;
+  white-space: nowrap;
+  vertical-align: 1px;
+  color: #808080;
+}
+.productList .mainInfo .genre {
+  padding-top: 4px;
+  font-size: 11px;
+  line-height: 1.2;
+  color: #808080;
+}
+.productList .mainInfo .ratingStarArea {
+  margin-top: 5px;
+}
+
+.panelBlue {
+  background-color: #03c;
+}
+
+.panelGreen {
+  background-color: #1BC1A0;
+}
+
+.panelYellow {
+  background-color: #F2C200;
+}
+
+.panelRed {
+  background-color: #ff4d52;
+}

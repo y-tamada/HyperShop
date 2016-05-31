@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/lib/fontawesome-stars.css}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/product_list.css}"/>
 
 <title>Hyper Shop</title>
 </head>
@@ -24,88 +25,36 @@
 		</section>
 		<section class="productListArea" id="productListArea">
 			<ul class="productList" th:remove="all">
-				<li class="productInfo panelBlue">
-					<a class="blockLevelLink" href="javascript:void(0);">
-						<div class="productLink">
-							<div class="mainImage"><img alt="ps4" th:src="@{/image/dummy/128x128.png}"/></div>
-							<ul class="thumbnailList">
-								<li class="thumbnail"><img alt="ps4" th:src="@{/image/dummy/64x64-g.png}"/></li>
-								<li class="thumbnail"><img alt="ps4" th:src="@{/image/dummy/64x64-r.png}"/></li>
-							</ul>
-							<div class="productDetail">
-								<h3 class="productName">ps4</h3>
-								<div class="horizontalBox">
-									<div class="shopName">HyperShop</div>
-									<div class="price">¥1000</div>	
-								</div>
-								<div class="genre">game</div>
-								<div class="catchcopy">this is game</div>
+				<li class="productInfo">
+					<div class="mainInfo">
+						<p class="mainImage"><a href="/coordinate/?cdid=7080534"><img class="" src="/a/a" alt="" width="215" height="215"/></a></p>
+						<div class="iteminfo clearfix">
+							<p class="shopName">aaaaa</p>
+							<p class="productName"></p>
+							<p class="price">¥637<span class="tax">税込</span></p>
+							<p class="genre">ccccc</p>
+							<div class="ratingStarArea">
+								<select name="ratingStar">
+								  <option value="3">3</option>
+								  <option value="2">2</option>
+								  <option value="3">3</option>
+								  <option value="4">4</option>
+								  <option value="5">5</option>
+								</select>
 							</div>
 						</div>
-						<div class="ratingStarArea">
-							<select name="ratingStar">
-							  <option value="3">3</option>
-							  <option value="2">2</option>
-							  <option value="3">3</option>
-							  <option value="4">4</option>
-							  <option value="5">5</option>
-							</select>
-						</div>
-					</a>
-				</li>
-				<li class="productInfo panelGreen">
-					<a class="blockLevelLink" href="javascript:void(0);">
-						<div class="productLink">
-							<div class="mainImage"><img alt="ps4" th:src="@{/image/dummy/128x128.png}"/></div>
-							<ul class="thumbnailList">
-								<li class="thumbnail"><img alt="ps4" th:src="@{/image/dummy/64x64-r.png}"/></li>
-								<li class="thumbnail"><img alt="ps4" th:src="@{/image/dummy/64x64-b.png}"/></li>
+					</div>
+					<div class="moreitem" style="display: none; width: 390px;">
+						<div class="container">
+							<ul>
+								<li>
+									<a href="/?c=gr&amp;did=24468549" class="clearfix">
+										<p class="thumbnail"><img src="aa/aa" alt="aa" width="33" height="40"/></p>
+									</a>
+								</li>
 							</ul>
-							<div class="productDetail">
-								<h3 class="productName">ps4</h3>
-								<div class="horizontalBox">
-									<div class="shopName">HyperShop</div>
-									<div class="price">¥1000</div>	
-								</div>
-								<div class="genre">game</div>
-								<div class="catchcopy">this is game</div>
-							</div>
 						</div>
-						<div class="ratingStarArea">
-							<select name="ratingStar">
-							  <option value="3">3</option>
-							</select>
-						</div>
-					</a>
-				</li>
-				<li class="productInfo panelYellow">
-					<a class="blockLevelLink" href="javascript:void(0);">
-						<div class="productLink">
-							<div class="mainImage"><img alt="ps4" th:src="@{/image/dummy/128x128.png}"/></div>
-							<ul class="thumbnailList">
-								<li class="thumbnail"><img alt="ps4" th:src="@{/image/dummy/64x64-b.png}"/></li>
-								<li class="thumbnail"><img alt="ps4" th:src="@{/image/dummy/64x64-g.png}"/></li>
-							</ul>
-							<div class="productDetail">
-								<h3 class="productName">ps4</h3>
-								<div class="horizontalBox">
-									<div class="shopName">HyperShop</div>
-									<div class="price">¥1000</div>	
-								</div>
-								<div class="genre">game</div>
-								<div class="catchcopy">this is game</div>
-							</div>
-						</div>
-						<div class="ratingStarArea">
-							<select name="ratingStar">
-							  <option value="1">1</option>
-							  <option value="2">2</option>
-							  <option value="3">3</option>
-							  <option value="4">4</option>
-							  <option value="5">5</option>
-							</select>
-						</div>
-					</a>
+					</div>
 				</li>
 			</ul>
 		</section>
@@ -115,7 +64,6 @@
 		<footer></footer>
 	</div>
 	<script type="text/javascript" th:src="@{/js/lib/jquery-2.2.4.min.js}"></script>
-	<script type="text/javascript" th:src="@{/js/lib/jRate.min.js}"></script>
 	<script type="text/javascript" th:src="@{/js/lib/jquery.barrating.min.js}"></script>
 	<script type="text/javascript" th:src="@{/js/index.js}"></script>
 </body>

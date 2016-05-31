@@ -1,0 +1,80 @@
+$hy-blue:#03c;
+$hy-green:#1BC1A0;
+$hy-red:#ff4d52;
+$hy-gray:#666;
+$hy-black:#222;
+$hy-white:whitesmoke;
+$hy-yellow:#F2C200;
+
+$panel-width:215px;
+$panel-height:155px;
+
+.productList{
+	display: flex;
+	flex-wrap: wrap;
+	.mainInfo{
+		margin: 20px 40px 30px 40px;
+		p{
+			width: $panel-width;
+		}
+		.mainImage img{
+			width: 215;
+			height: 215;
+		}
+		.shopName{
+			margin: 0;
+			line-height: 1.2;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			color: #808080;
+			font-size: 12px;
+		}
+		.productName{
+			margin: 0;
+			line-height: 1.2;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			color: #808080;
+			font-size: 12px;
+		}
+		.price{
+			margin: 6px 0 0 0;
+			font-size: 15px;
+			line-height: 1.1;
+		}
+		.tax{
+			font-size: 10px;
+			margin: 0 0 0 2px;
+			white-space: nowrap;
+			vertical-align: 1px;
+			color: #808080;
+		}
+		.genre{
+			padding-top: 4px;
+			font-size: 11px;
+			line-height: 1.2;
+			color: #808080;
+		}
+		.ratingStarArea{
+			margin-top: 5px;
+		}
+	}
+}
+
+.panelBlue{
+	background-color: $hy-blue;
+}
+
+.panelGreen{
+	background-color: $hy-green;
+}
+
+.panelYellow{
+	background-color: $hy-yellow;
+}
+
+.panelRed{
+	background-color: $hy-red;
+}
