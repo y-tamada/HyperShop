@@ -49,6 +49,14 @@ public class SearchConditionVo {
 	public void setShopCode(String shopCode) {
 		this.shopCode = shopCode;
 	}
+
+	public Integer getCurrentPage() {
+		return currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+	}
 	
 	
 }

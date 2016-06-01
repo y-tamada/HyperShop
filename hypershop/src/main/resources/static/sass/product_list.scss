@@ -13,13 +13,24 @@ $panel-height:155px;
 	display: flex;
 	flex-wrap: wrap;
 	.mainInfo{
-		margin: 20px 40px 30px 40px;
+		margin: 10px 30px 30px 30px;
+		&.emphasis{
+			-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+			-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    	border-radius: 2px;
+		}
 		p{
 			width: $panel-width;
+			padding: 0px 10px 0px 10px;
 		}
-		.mainImage img{
-			width: 215;
-			height: 215;
+		.mainImage{
+			padding-top: 10px;
+			height: 135px;
+			img{
+				width: 215;
+				height: 215;
+			}
 		}
 		.shopName{
 			margin: 0;
@@ -31,7 +42,7 @@ $panel-height:155px;
 			font-size: 12px;
 		}
 		.productName{
-			margin: 0;
+			margin: 5px 0 0 0;
 			line-height: 1.2;
 			text-overflow: ellipsis;
 			white-space: nowrap;
@@ -59,6 +70,7 @@ $panel-height:155px;
 		}
 		.ratingStarArea{
 			margin-top: 5px;
+			margin-left: 10px;
 		}
 	}
 }

@@ -3,10 +3,21 @@
   flex-wrap: wrap;
 }
 .productList .mainInfo {
-  margin: 20px 40px 30px 40px;
+  margin: 10px 30px 30px 30px;
+}
+.productList .mainInfo.emphasis {
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
 }
 .productList .mainInfo p {
   width: 215px;
+  padding: 0px 10px 0px 10px;
+}
+.productList .mainInfo .mainImage {
+  padding-top: 10px;
+  height: 135px;
 }
 .productList .mainInfo .mainImage img {
   width: 215;
@@ -22,7 +33,7 @@
   font-size: 12px;
 }
 .productList .mainInfo .productName {
-  margin: 0;
+  margin: 5px 0 0 0;
   line-height: 1.2;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -50,6 +61,7 @@
 }
 .productList .mainInfo .ratingStarArea {
   margin-top: 5px;
+  margin-left: 10px;
 }
 
 .panelBlue {

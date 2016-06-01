@@ -18,16 +18,9 @@ $(document).ready(function(){
 		
 		$('.loader-inner').show();
 		
-		$.ajax({
-			type: 'post',
-			url: $("#contextPath").val() + 'productSearch',
-			data: { 'keyword' : $("input[name=keyword]").val() },
-			async: false,
-			success: function(data){
-				$("#productListArea ul").remove();
-				$("#productListArea").append(data);
-			}
-		});
+		ajaxSearch();
+		
+		$('.loader-inner').hide();
 		
 		$(".productInfo").each(function(){
 //			var index = $(this).attr("data-value");
@@ -48,6 +41,7 @@ $(document).ready(function(){
 //				$(this).addClass("panelBlue");
 //			break;
 //			}
+			
 			$(this).fadeIn("slow");
 			
 			//ratringStar
@@ -59,9 +53,32 @@ $(document).ready(function(){
 					});
 			 });
 		});
-		$('.loader-inner').hide();
+	});
+	
+	$(document).on("mouseenter", ".mainInfo", function(){
+		$(this).addClass("emphasis");
+	});
+	
+	$(document).on("mouseleave", ".mainInfo", function(){
+		$(this).removeClass("emphasis");
 	});
 });
+
+function ajaxSearch(){
+	$.ajax({
+		type: 'post',
+		url: $("#contextPath").val() + 'productSearch',
+		data: { 'keyword' : $("input[name=keyword]").val() },
+		async: false,
+		success: function(data){
+			$("#productListArea ul").remove();
+			$("#productListArea").append(data);
+		},
+		error: function(err){
+			alert("検索条件を確認して下さい");
+		}
+	});
+}
 
 function enterSearch(code){
 	//エンターキー押下なら
@@ -69,3 +86,4 @@ function enterSearch(code){
 		$("#productSearch").trigger("click");
 	}
 }
+
