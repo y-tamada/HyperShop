@@ -1,5 +1,5 @@
-			<ul class="productList">
-				<li class="productInfo" th:each="productInfo : ${itemList}" th:object="${productInfo.item}" th:attr="data-value=${productInfoStat.index}">
+			<ul class="productList" th:if="${itemList != null}">
+				<li class="productInfo" th:each="productInfo : ${itemList}" th:object="${productInfo.item}" th:attr="data-value=${productInfoStat.index}" style="display:none">
 					<div class="mainInfo">
 						<p class="mainImage">
 							<a th:href="*{affiliateUrl}"><img th:src="*{mediumImageUrls[0].imageUrl}" th:alt="*{itemName}"/></a>
@@ -7,7 +7,7 @@
 						<div class="iteminfo clearfix">
 							<p class="shopName" th:text="*{shopName}">shop1</p>
 							<p class="productName" th:text="*{itemName}">item1</p>
-							<p class="price">¥<span th:text="*{#numbers.formatInteger(itemPrice,1,'COMMA')}">1000</span><span class="tax" th:text="*{taxFlag == 0}?'税込':'税別'">税込</span></p>
+							<p class="price">¥<span th:text="*{#numbers.formatInteger(itemPrice,1,'COMMA')}">1000</span><span class="tax" th:text="*{taxFlag}">税込</span></p>
 							<p class="genre" th:text="*{genreId}">ベルト</p>
 							<div class="ratingStarArea">
 								<select name="ratingStar">

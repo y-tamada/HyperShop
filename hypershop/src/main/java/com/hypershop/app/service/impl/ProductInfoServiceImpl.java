@@ -24,14 +24,34 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 	
 	private static final String DEVELOPER_ID = "1048080648711546146";
 	private static final String AFFILIATE_ID = "14f3b44a.135864d6.14f3b44b.88c14e37";
+	private static final int PAGE_NUM = 28;
 
 	@Override
 	public ProductInfoListVo getProductInfo(Locale locale, SearchConditionVo searchConditionVo) {
 
+		ProductInfoListVo productInfoVo = null;
+		
+		try{
+			// 楽天商品検索
+			productInfoVo = this.getRakutenProductInfo(searchConditionVo);
+			
+//			for(ProductInfoVo target : productInfoVo.getItems()){
+//				target.getItem().setGenreName(this.getRakutenGenreName(target.getItem().getGenreId()));
+//			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		
+		return productInfoVo;
+	}
+
+	public ProductInfoListVo getRakutenProductInfo(SearchConditionVo searchConditionVo) throws Exception{
+
 		StringBuilder out = new StringBuilder();
 		BufferedReader reader = null;
 		ProductInfoListVo productInfoVo = null;
-
+		
 		try{
 			// URL作成
 			StringBuilder requestPath = new StringBuilder("https://app.rakuten.co.jp/services/api/IchibaItem/Search/20140222?format=json");
@@ -43,6 +63,7 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 			if(StringUtils.isNotBlank(searchConditionVo.getGenreId())){
 				requestPath.append("&genreId=" + URLEncoder.encode(searchConditionVo.getGenreId(), "UTF-8"));
 			}
+			requestPath.append("&hits=" + Integer.toString(PAGE_NUM));
 			// アプリID
 			requestPath.append("&applicationId=" + DEVELOPER_ID);
 			// アフィリエイトID
@@ -59,17 +80,17 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 			while ((line = reader.readLine()) != null) {
 				out.append(line);
 			}
-			
+
 			String json = out.toString()
 					.replaceAll("Item", "item")
 					.replaceAll("GenreInformation", "genreInformation")
 					.replaceAll("TagInformation", "tagInformation");
-			
+
 			ObjectMapper mapper = new ObjectMapper();
 			productInfoVo = mapper.readValue(json, ProductInfoListVo.class);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw e;
 		} finally {
 			// reader
 			if(reader != null){
@@ -82,6 +103,6 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 		}
 		
 		return productInfoVo;
-	}
+	}				
 
 }

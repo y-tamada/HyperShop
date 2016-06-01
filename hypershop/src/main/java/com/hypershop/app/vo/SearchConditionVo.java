@@ -15,6 +15,8 @@ public class SearchConditionVo {
 	private String itemCode;
 	/** shopCode */
 	private String shopCode;
+	/** 現在ページ */
+	private Integer currentPage;
 
 	public String getKeyword() {
 		return keyword;

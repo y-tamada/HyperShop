@@ -3,17 +3,21 @@
  */
 
 $(document).ready(function(){
-	
+	$('.loader-inner').loaders();
+	$('.loader-inner').hide();
 	//ratringStar
-			$(function() {
-					$('select[name=ratingStar]').barrating({
-						theme: 'fontawesome-stars',
-						readonly: true,
-						showSelectedRating: true
-					});
-			 });
+	$(function() {
+		$('select[name=ratingStar]').barrating({
+			theme: 'fontawesome-stars',
+			readonly: true,
+			showSelectedRating: true
+		});
+	});
 	
 	$("#productSearch").on("click", function(){
+		
+		$('.loader-inner').show();
+		
 		$.ajax({
 			type: 'post',
 			url: $("#contextPath").val() + 'productSearch',
@@ -44,6 +48,7 @@ $(document).ready(function(){
 //				$(this).addClass("panelBlue");
 //			break;
 //			}
+			$(this).fadeIn("slow");
 			
 			//ratringStar
 			$(function() {
@@ -54,6 +59,7 @@ $(document).ready(function(){
 					});
 			 });
 		});
+		$('.loader-inner').hide();
 	});
 });
 

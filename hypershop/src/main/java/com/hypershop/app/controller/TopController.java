@@ -2,6 +2,7 @@ package com.hypershop.app.controller;
 
 import java.util.Locale;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +42,15 @@ public class TopController {
 	@RequestMapping("/productSearch")
 	public String productSearch(Locale locale, SearchConditionVo searchConditionVo, Model model){
 		
-		ProductInfoListVo productInfoListVo = service.getProductInfo(locale, searchConditionVo);
+		ProductInfoListVo productInfoListVo = null;
+		
+		// キーワードがなければ検索しない
+		if(StringUtils.isBlank(searchConditionVo.getKeyword())){
+			logger.info("keyword is blank !!");
+			return "product_list"; 
+		}
+		
+		productInfoListVo = service.getProductInfo(locale, searchConditionVo);
 		
 		model.addAttribute("itemList", productInfoListVo.getItems());
 

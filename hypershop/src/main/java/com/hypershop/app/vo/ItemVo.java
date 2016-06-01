@@ -74,6 +74,8 @@ public class ItemVo {
     private String genreId;
 
     private String[] tagIds;
+    
+    private String genreName;
 
 	public String getItemName() {
 		return itemName;
@@ -353,5 +355,13 @@ public class ItemVo {
 
 	public void setTagIds(String[] tagIds) {
 		this.tagIds = tagIds;
+	}
+
+	public String getGenreName() {
+		return genreName;
+	}
+
+	public void setGenreName(String genreName) {
+		this.genreName = genreName;
 	}
 }

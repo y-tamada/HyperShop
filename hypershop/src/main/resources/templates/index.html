@@ -2,9 +2,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="shortcut icon" th:href="@{/image/icon/hs-icon.png}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/screen.css}"/>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/lib/fontawesome-stars.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/lib/loaders.min.css}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/product_list.css}"/>
 
@@ -20,7 +22,7 @@
 				<input type="text" name="keyword" onkeypress="enterSearch(event.keyCode);"/>
 			</div>
 			<div class="searchBtn">
-				<a href="javascript:void(0);" id="productSearch">Search!</a>
+				<a href="javascript:void(0);" id="productSearch"><img th:src="@{/image/button/search_button.png}" alt="search!!!"/></a>
 			</div>
 		</section>
 		<section class="productListArea" id="productListArea">
@@ -62,9 +64,11 @@
 			<input id="contextPath" type="hidden" th:value="@{/}"/>
 		</div>
 		<footer></footer>
+		<div class="loader-inner ball-clip-rotate-pulse"></div>
 	</div>
 	<script type="text/javascript" th:src="@{/js/lib/jquery-2.2.4.min.js}"></script>
 	<script type="text/javascript" th:src="@{/js/lib/jquery.barrating.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/lib/loaders.css.js}"></script>
 	<script type="text/javascript" th:src="@{/js/index.js}"></script>
 </body>
 </html>
