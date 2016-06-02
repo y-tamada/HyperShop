@@ -66,7 +66,7 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 		BufferedReader reader = null;
 		ProductInfoListVo productInfoVo = null;
 		// 取得したい項目のカンマ区切り文字列
-		String elements = "affiliateUrl,mediumImageUrls,smallImageUrls,itemName,shopName,itemPrice,taxFlag,genreId,reviewAverage";
+		String elements = "affiliateUrl,mediumImageUrls,smallImageUrls,itemName,shopName,itemPrice,taxFlag,genreId,reviewAverage,pageCount,count";
 		
 		try{
 			// URL作成
@@ -81,6 +81,8 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 			}
 			// 検索件数
 			requestPath.append("&hits=" + Integer.toString(PAGE_NUM))
+			// 取得するページページ
+			.append("&page=" + searchConditionVo.getPage())
 			// 取得項目
 			.append("&elements=" + elements)
 			// イメージフラグ イメージが存在するもののみ検索

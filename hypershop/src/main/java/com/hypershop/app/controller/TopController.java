@@ -53,6 +53,9 @@ public class TopController {
 		productInfoListVo = service.getProductInfo(locale, searchConditionVo);
 		
 		model.addAttribute("itemList", productInfoListVo.getItems());
+		model.addAttribute("currentPage", searchConditionVo.getPage());
+		model.addAttribute("count", productInfoListVo.getCount());
+		model.addAttribute("pageCount", productInfoListVo.getPageCount());
 
 		return "product_list";
 	}

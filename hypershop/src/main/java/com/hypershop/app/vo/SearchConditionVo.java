@@ -16,7 +16,7 @@ public class SearchConditionVo {
 	/** shopCode */
 	private String shopCode;
 	/** 現在ページ */
-	private Integer currentPage;
+	private Integer page;
 
 	public String getKeyword() {
 		return keyword;
@@ -50,12 +50,12 @@ public class SearchConditionVo {
 		this.shopCode = shopCode;
 	}
 
-	public Integer getCurrentPage() {
-		return currentPage;
+	public Integer getPage() {
+		return page;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
+	public void setPage(Integer page) {
+		this.page = page;
 	}
 	
 	

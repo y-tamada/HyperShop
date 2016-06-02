@@ -63,19 +63,21 @@
   margin-top: 5px;
   margin-left: 10px;
 }
-
-.panelBlue {
-  background-color: #03c;
+.productList .mainInfo .ratingStarArea .blue a {
+  color: #89c3eb;
 }
-
-.panelGreen {
-  background-color: #1BC1A0;
+.productList .mainInfo .ratingStarArea .green a {
+  color: #89c997;
 }
-
-.panelYellow {
-  background-color: #F2C200;
+.productList .mainInfo .ratingStarArea .yellow a {
+  color: #edb867;
 }
-
-.panelRed {
-  background-color: #ff4d52;
+.productList .mainInfo .ratingStarArea .red a {
+  color: #f4b3c2;
+}
+.productList .mainInfo .ratingStarArea .purple a {
+  color: #cab8d9;
+}
+.productList .mainInfo .ratingStarArea .orange a {
+  color: #f6ae54;
 }

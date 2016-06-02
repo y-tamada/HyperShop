@@ -1,10 +1,12 @@
-$hy-blue:#03c;
-$hy-green:#1BC1A0;
-$hy-red:#ff4d52;
+$hy-blue:#89c3eb;
+$hy-green:#89c997;
+$hy-red:#f4b3c2;
 $hy-gray:#666;
 $hy-black:#222;
 $hy-white:whitesmoke;
-$hy-yellow:#F2C200;
+$hy-yellow:#edb867;
+$hy-orange:#f6ae54;
+$hy-purple:#cab8d9;
 
 $panel-width:215px;
 $panel-height:155px;
@@ -71,22 +73,42 @@ $panel-height:155px;
 		.ratingStarArea{
 			margin-top: 5px;
 			margin-left: 10px;
+			.blue{
+				a{
+					color: $hy-blue;
+				}
+			}
+
+			.green{
+				a{
+					color: $hy-green;
+				}
+			}
+
+			.yellow{
+				a{
+					color: $hy-yellow;
+				}
+			}
+
+			.red{
+				a{
+					color: $hy-red;
+				}
+			}
+				
+			.purple{
+				a{
+					color: $hy-purple;
+				}
+			}
+				
+			.orange{
+				a{
+					color: $hy-orange;
+				}
+			}
 		}
 	}
 }
 
-.panelBlue{
-	background-color: $hy-blue;
-}
-
-.panelGreen{
-	background-color: $hy-green;
-}
-
-.panelYellow{
-	background-color: $hy-yellow;
-}
-
-.panelRed{
-	background-color: $hy-red;
-}

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="shortcut icon" th:href="@{/image/icon/hs-icon.png}"/>
+<link rel="shortcut icon" th:href="@{/image/icon/hohi_icon.png}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/screen.css}"/>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/lib/fontawesome-stars.css}"/>
@@ -15,11 +15,11 @@
 <body>
 	<div class="wrapper">
 		<header>
-			<h1><img th:src="@{/image/logo/main_logo.png}" alt="HyperShop"/></h1>
+			<h1><img th:src="@{/image/logo/main_logo_hoshi.png}" alt="HyperShop"/></h1>
 		</header>
 		<section class="searchArea">
 			<div class="searchInput">
-				<input type="text" name="keyword" onkeypress="enterSearch(event.keyCode);"/>
+				<input type="text" name="keyword" onkeypress="enterSearch(event.keyCode);" placeholder="キーワードで商品を検索する"/>
 			</div>
 			<div class="searchBtn">
 				<a href="javascript:void(0);" id="productSearch"><img th:src="@{/image/button/search_button.png}" alt="search!!!"/></a>
@@ -59,6 +59,27 @@
 					</div>
 				</li>
 			</ul>
+			<div id="pageValue">
+				<input type="hidden" id="currentPage" value="1"/>
+				<input type="hidden" id="count" value="0"/>
+				<input type="hidden" id="pageCount" value="0"/>
+			</div>
+		</section>
+		<section class="pagerArea" style="display:none">
+			<div class="pageCountWrapper">
+				<p class="pageCount">page 1 of 100</p>
+			</div>
+			<div class="pagenation">
+			<p class="prev uiDisable" id="prevButton"><a rel="prev" href="javascript:void(0)">＜</a></p>
+				<ol class="pageButtonArea">
+					<li class="pageButton"><a href="javascript:void(0)">1</a></li>
+					<li class="pageButton"><a href="javascript:void(0)">2</a></li>
+					<li class="pageButton"><a href="javascript:void(0)">3</a></li>
+					<li class="ellipsis">…</li>
+					<li class="pageButton"><a href="javascript:void(0)">10</a></li>
+				</ol>
+	    	<p class="next" id="nextButton"><a rel="next" href="javascript:void(0)">＞</a></p>
+    	</div>
 		</section>
 		<div class="hiddenValues">
 			<input id="contextPath" type="hidden" th:value="@{/}"/>

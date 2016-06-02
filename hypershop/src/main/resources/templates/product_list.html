@@ -2,7 +2,7 @@
 				<li class="productInfo" th:each="productInfo : ${itemList}" th:object="${productInfo.item}" th:attr="data-value=${productInfoStat.index}" style="display:none">
 					<div class="mainInfo">
 						<p class="mainImage">
-							<a th:href="*{affiliateUrl}"><img th:src="*{mediumImageUrls[0].imageUrl}" th:alt="*{itemName}"/></a>
+							<a th:href="*{affiliateUrl}" target="_blank"><img th:src="*{mediumImageUrls[0].imageUrl}" th:alt="*{itemName}"/></a>
 						</p>
 						<div class="iteminfo clearfix">
 							<p class="shopName" th:text="*{shopName}">shop1</p>
@@ -33,3 +33,9 @@
 					</div>
 				</li>
 			</ul>
+			<div id="pageValue">
+				<input type="hidden" id="currentPage" th:value="${currentPage}"/>
+				<input type="hidden" id="count" th:value="${count}"/>
+				<input type="hidden" id="pageCount" th:value="${pageCount}"/>
+			</div>
+			

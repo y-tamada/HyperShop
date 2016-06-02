@@ -53,6 +53,65 @@ body .horizontalBox {
   background-color: #222;
 }
 
+.pagerArea {
+  background-image: url(../image/bg/bg_brown.jpg);
+  height: 60px;
+  display: flex;
+}
+.pagerArea a {
+  color: #3f312b;
+}
+.pagerArea .pageCountWrapper {
+  height: 40px;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: 25px;
+}
+.pagerArea .pageCountWrapper .pageCount {
+  margin-left: 20px;
+  border: 2px solid #3f312b;
+  height: 38px;
+  width: 160px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.pagerArea .pagenation {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  margin-top: 10px;
+  margin-right: 25px;
+}
+.pagerArea .pagenation .prev {
+  width: 27px;
+  text-align: center;
+  padding-top: 11px;
+  border: 2px solid #3f312b;
+  margin-right: 10px;
+}
+.pagerArea .pagenation ol {
+  display: flex;
+}
+.pagerArea .pagenation ol li.pageButton {
+  min-width: 27px;
+  text-align: center;
+  padding-top: 11px;
+  border: 2px solid #3f312b;
+  margin-right: 10px;
+}
+.pagerArea .pagenation ol li.ellipsis {
+  text-align: center;
+  padding-top: 11px;
+  margin-right: 10px;
+}
+.pagerArea .pagenation .next {
+  width: 27px;
+  text-align: center;
+  padding-top: 11px;
+  border: 2px solid #3f312b;
+}
+
 .loader-inner {
   opacity: 0.5;
   border-radius: 10px;
