@@ -63,21 +63,24 @@
   margin-top: 5px;
   margin-left: 10px;
 }
-.productList .mainInfo .ratingStarArea .blue a {
+.productList .mainInfo .ratingStarArea.blueSter a.br-selected:after {
   color: #89c3eb;
 }
-.productList .mainInfo .ratingStarArea .green a {
+.productList .mainInfo .ratingStarArea.greenSter a.br-selected:after {
   color: #89c997;
 }
-.productList .mainInfo .ratingStarArea .yellow a {
+.productList .mainInfo .ratingStarArea.yellowSter a.br-selected:after {
   color: #edb867;
 }
-.productList .mainInfo .ratingStarArea .red a {
+.productList .mainInfo .ratingStarArea.redSter a.br-selected:after {
   color: #f4b3c2;
 }
-.productList .mainInfo .ratingStarArea .purple a {
+.productList .mainInfo .ratingStarArea.purpleSter a.br-selected:after {
   color: #cab8d9;
 }
-.productList .mainInfo .ratingStarArea .orange a {
-  color: #f6ae54;
+.productList .mainInfo .ratingStarArea.orangeSter a.br-selected:after {
+  color: #ee7800;
+}
+.productList .mainInfo .ratingStarArea.aitetuSter a.br-selected:after {
+  color: #393f4c;
 }
