@@ -5,8 +5,9 @@ $hy-gray:#666;
 $hy-black:#222;
 $hy-white:whitesmoke;
 $hy-yellow:#edb867;
-$hy-orange:#f6ae54;
+$hy-orange:#ee7800;
 $hy-purple:#cab8d9;
+$hy-aitetu:#393f4c;
 
 $panel-width:215px;
 $panel-height:155px;
@@ -73,39 +74,45 @@ $panel-height:155px;
 		.ratingStarArea{
 			margin-top: 5px;
 			margin-left: 10px;
-			.blue{
-				a{
+			&.blueSter{
+				a.br-selected:after{
 					color: $hy-blue;
 				}
 			}
 
-			.green{
-				a{
+			&.greenSter{
+				a.br-selected:after{
 					color: $hy-green;
 				}
 			}
 
-			.yellow{
-				a{
+			&.yellowSter{
+				a.br-selected:after{
 					color: $hy-yellow;
 				}
 			}
 
-			.red{
-				a{
+			&.redSter{
+				a.br-selected:after{
 					color: $hy-red;
 				}
 			}
 				
-			.purple{
-				a{
+			&.purpleSter{
+				a.br-selected:after{
 					color: $hy-purple;
 				}
 			}
 				
-			.orange{
-				a{
+			&.orangeSter{
+				a.br-selected:after{
 					color: $hy-orange;
+				}
+			}
+			
+			&.aitetuSter{
+				a.br-selected:after{
+					color: $hy-aitetu;
 				}
 			}
 		}

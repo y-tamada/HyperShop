@@ -1,11 +1,11 @@
 			<ul class="productList">
-				<li class="productInfo" th:each="productInfo : ${itemList}" th:object="${productInfo.item}" th:attr="data-value=${productInfoStat.index}">
+				<li class="productInfo" th:each="productInfo : ${itemList}" th:object="${productInfo}" th:attr="data-value=${productInfoStat.index}">
 					<a class="blockLevelLink" href="javascript:void(0);" th:href="*{affiliateUrl}">
 						<div class="productLink">
-							<div class="mainImage"><img alt="ps4" th:src="*{mediumImageUrls[0].imageUrl}"/></div>
+							<div class="mainImage"><img alt="ps4" th:src="*{mediumImageUrls[0]}"/></div>
 							<ul class="thumbnailList">
 								<li th:each="smallImage : *{smallImageUrls}" class="thumbnail" th:if="${smallImageStat.index} gt 0 and ${smallImageStat.index} lt 3">
-									<img alt="ps4" th:src="${smallImage.imageUrl}"/>
+									<img alt="ps4" th:src="${smallImage}"/>
 								</li>
 								<li th:remove="all" class="thumbnail">
 									<img alt="ps4" th:src="@{/image/dummy/64x64-r.png}"/>

@@ -12,12 +12,16 @@ import java.util.Locale;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.util.concurrent.ListenableFuture;
+import org.springframework.web.client.AsyncRestTemplate;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hypershop.app.service.ProductInfoService;
 import com.hypershop.app.vo.GenreWrapperVo;
+import com.hypershop.app.vo.ItemVo;
 import com.hypershop.app.vo.ProductInfoListVo;
 import com.hypershop.app.vo.ProductInfoVo;
 import com.hypershop.app.vo.SearchConditionVo;
@@ -42,8 +46,8 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 			// 楽天商品検索
 			productInfoVo = this.getRakutenProductInfo(searchConditionVo);
 			
-			for(ProductInfoVo target : productInfoVo.getItems()){
-				target.getItem().setGenreName(this.getRakutenGenreName(target.getItem().getGenreId()));
+			for(ItemVo target : productInfoVo.getItems()){
+				target.setGenreName(this.getRakutenGenreName(target.getGenreId()));
 			}
 
 		} catch (Exception e) {
@@ -62,8 +66,6 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 	 */
 	public ProductInfoListVo getRakutenProductInfo(SearchConditionVo searchConditionVo) throws Exception{
 
-		StringBuilder out = new StringBuilder();
-		BufferedReader reader = null;
 		ProductInfoListVo productInfoVo = null;
 		// 取得したい項目のカンマ区切り文字列
 		String elements = "affiliateUrl,mediumImageUrls,smallImageUrls,itemName,shopName,itemPrice,taxFlag,genreId,reviewAverage,pageCount,count";
@@ -85,6 +87,7 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 			.append("&page=" + searchConditionVo.getPage())
 			// 取得項目
 			.append("&elements=" + elements)
+			.append("&formatVersion=2")
 			// イメージフラグ イメージが存在するもののみ検索
 			.append("&imageFlag=1")
 			// アプリID
@@ -93,18 +96,10 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 			.append("&affiliateId=" + AFFILIATE_ID);
 
 			// リクエスト送信
-			URL requestUrl = new URL(requestPath.toString());
-			HttpURLConnection connection = (HttpURLConnection)requestUrl.openConnection();
-			InputStream input = connection.getInputStream();
-			reader = new BufferedReader(new InputStreamReader(input, "UTF-8"));
+			AsyncRestTemplate asyncRestTemplate = new AsyncRestTemplate();
+			ListenableFuture<ResponseEntity<String>> future = asyncRestTemplate.getForEntity(requestPath.toString(), String.class);
 
-			// 結果の書き出し
-			String line;
-			while ((line = reader.readLine()) != null) {
-				out.append(line);
-			}
-
-			String json = out.toString()
+			String json = future.get().getBody()
 					.replaceAll("Item", "item")
 					.replaceAll("GenreInformation", "genreInformation")
 					.replaceAll("TagInformation", "tagInformation");
@@ -115,15 +110,6 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 		} catch (Exception e) {
 			logger.error("can't get rakuten product !!!");
 			throw e;
-		} finally {
-			// reader close
-			if(reader != null){
-				try {
-					reader.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
 		}
 		
 		return productInfoVo;

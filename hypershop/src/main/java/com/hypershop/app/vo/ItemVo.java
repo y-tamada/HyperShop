@@ -21,9 +21,9 @@ public class ItemVo {
 	
 	private Character imageFlag;
 	
-	private List<imageUrlVo> smallImageUrls;
+	private List<String> smallImageUrls;
 	
-	private List<imageUrlVo> mediumImageUrls;
+	private List<String> mediumImageUrls;
 	
 	private Character availability;
 	
@@ -141,19 +141,19 @@ public class ItemVo {
 		this.imageFlag = imageFlag;
 	}
 
-	public List<imageUrlVo> getSmallImageUrls() {
+	public List<String> getSmallImageUrls() {
 		return smallImageUrls;
 	}
 
-	public void setSmallImageUrls(List<imageUrlVo> smallImageUrls) {
+	public void setSmallImageUrls(List<String> smallImageUrls) {
 		this.smallImageUrls = smallImageUrls;
 	}
 
-	public List<imageUrlVo> getMediumImageUrls() {
+	public List<String> getMediumImageUrls() {
 		return mediumImageUrls;
 	}
 
-	public void setMediumImageUrls(List<imageUrlVo> mediumImageUrls) {
+	public void setMediumImageUrls(List<String> mediumImageUrls) {
 		this.mediumImageUrls = mediumImageUrls;
 	}
 

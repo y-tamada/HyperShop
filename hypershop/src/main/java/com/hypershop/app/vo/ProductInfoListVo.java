@@ -18,7 +18,7 @@ public class ProductInfoListVo {
 	
 	private Integer pageCount;
 	
-	private List<ProductInfoVo> Items;
+	private List<ItemVo> Items;
 	
 	private String[] genreInformation;
 	
@@ -80,11 +80,11 @@ public class ProductInfoListVo {
 		this.pageCount = pageCount;
 	}
 
-	public List<ProductInfoVo> getItems() {
+	public List<ItemVo> getItems() {
 		return Items;
 	}
 
-	public void setItems(List<ProductInfoVo> items) {
+	public void setItems(List<ItemVo> items) {
 		Items = items;
 	}
 

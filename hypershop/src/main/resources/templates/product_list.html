@@ -1,8 +1,8 @@
 			<ul class="productList" th:if="${itemList != null}">
-				<li class="productInfo" th:each="productInfo : ${itemList}" th:object="${productInfo.item}" th:attr="data-value=${productInfoStat.index}" style="display:none">
+				<li class="productInfo" th:each="productInfo : ${itemList}" th:object="${productInfo}" th:attr="data-value=${productInfoStat.index}" style="display:none">
 					<div class="mainInfo">
 						<p class="mainImage">
-							<a th:href="*{affiliateUrl}" target="_blank"><img th:src="*{mediumImageUrls[0].imageUrl}" th:alt="*{itemName}"/></a>
+							<a th:href="*{affiliateUrl}" target="_blank"><img th:src="*{mediumImageUrls[0]}" th:alt="*{itemName}"/></a>
 						</p>
 						<div class="iteminfo clearfix">
 							<p class="shopName" th:text="*{shopName}">shop1</p>
@@ -25,7 +25,7 @@
 							<ul>
 								<li th:each="smallImage : *{smallImageUrls}">
 									<a href="/?c=gr&amp;did=24468549" class="clearfix">
-										<p class="thumbnail"><img th:src="${smallImage.imageUrl}" alt="" width="33" height="40"/></p>
+										<p class="thumbnail"><img th:src="${smallImage}" alt="" width="33" height="40"/></p>
 									</a>
 								</li>
 							</ul>

@@ -67,24 +67,33 @@ function ajaxSearch(page){
 			$('.loader-inner').hide();
 			
 			$(".productInfo").each(function(){
-//				var index = $(this).attr("data-value");
-//				switch(index % 4){
-//				case 0:
-//					$(this).addClass("panelBlue");
-//					break;
-//				case 1:
-//					$(this).addClass("panelGreen");
-//					break;
-//				case 2:
-//					$(this).addClass("panelYellow");
-//					break;
-//				case 3:
-//					$(this).addClass("panelRed");
-//					break;
-//				default:
-//					$(this).addClass("panelBlue");
-//				break;
-//				}
+				var index = $(this).attr("data-value");
+				switch(index % 7){
+				case 0:
+					$(this).find(".ratingStarArea").addClass("yellowSter");
+					break;
+				case 1:
+					$(this).find(".ratingStarArea").addClass("blueSter");
+					break;
+				case 2:
+					$(this).find(".ratingStarArea").addClass("greenSter");
+					break;
+				case 3:
+					$(this).find(".ratingStarArea").addClass("redSter");
+					break;
+				case 4:
+					$(this).find(".ratingStarArea").addClass("orangeSter");
+					break;
+				case 5:
+					$(this).find(".ratingStarArea").addClass("purpleSter");
+					break;
+				case 6:
+					$(this).find(".ratingStarArea").addClass("aitetuSter");
+					break;
+				default:
+					$(this).find("ratingStarArea").addClass("panelBlue");
+					break;
+				}
 				
 				$(this).fadeIn("slow");
 				
