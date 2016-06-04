@@ -11,76 +11,61 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
 }
-.productList .mainInfo p {
-  width: 215px;
-  padding: 0px 10px 0px 10px;
-}
 .productList .mainInfo .mainImage {
   padding-top: 10px;
   height: 135px;
+  background-color: white;
+  text-align: center;
 }
 .productList .mainInfo .mainImage img {
   width: 215;
   height: 215;
 }
-.productList .mainInfo .shopName {
+.productList .mainInfo .mainImage p {
+  width: 215px;
+  padding: 0px 10px 0px 10px;
+}
+.productList .mainInfo .iteminfo {
+  background-color: #1976D2;
+  color: white;
+}
+.productList .mainInfo .iteminfo p {
+  width: 215px;
+  padding: 0px 10px 0px 10px;
+}
+.productList .mainInfo .iteminfo .shopName {
   margin: 0;
   line-height: 1.2;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  color: #808080;
   font-size: 12px;
 }
-.productList .mainInfo .productName {
+.productList .mainInfo .iteminfo .productName {
   margin: 5px 0 0 0;
   line-height: 1.2;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  color: #808080;
   font-size: 12px;
 }
-.productList .mainInfo .price {
+.productList .mainInfo .iteminfo .price {
   margin: 6px 0 0 0;
   font-size: 15px;
   line-height: 1.1;
 }
-.productList .mainInfo .tax {
+.productList .mainInfo .iteminfo .tax {
   font-size: 10px;
   margin: 0 0 0 2px;
   white-space: nowrap;
   vertical-align: 1px;
-  color: #808080;
 }
-.productList .mainInfo .genre {
+.productList .mainInfo .iteminfo .genre {
   padding-top: 4px;
   font-size: 11px;
   line-height: 1.2;
-  color: #808080;
 }
-.productList .mainInfo .ratingStarArea {
+.productList .mainInfo .iteminfo .ratingStarArea {
   margin-top: 5px;
   margin-left: 10px;
-}
-.productList .mainInfo .ratingStarArea.blueSter a.br-selected:after {
-  color: #89c3eb;
-}
-.productList .mainInfo .ratingStarArea.greenSter a.br-selected:after {
-  color: #89c997;
-}
-.productList .mainInfo .ratingStarArea.yellowSter a.br-selected:after {
-  color: #edb867;
-}
-.productList .mainInfo .ratingStarArea.redSter a.br-selected:after {
-  color: #f4b3c2;
-}
-.productList .mainInfo .ratingStarArea.purpleSter a.br-selected:after {
-  color: #cab8d9;
-}
-.productList .mainInfo .ratingStarArea.orangeSter a.br-selected:after {
-  color: #ee7800;
-}
-.productList .mainInfo .ratingStarArea.aitetuSter a.br-selected:after {
-  color: #393f4c;
 }

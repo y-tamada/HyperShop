@@ -35,7 +35,7 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 	
 	private static final String DEVELOPER_ID = "1048080648711546146";
 	private static final String AFFILIATE_ID = "14f3b44a.135864d6.14f3b44b.88c14e37";
-	private static final int PAGE_NUM = 28;
+	private static final int PAGE_NUM = 12;
 
 	@Override
 	public ProductInfoListVo getProductInfo(Locale locale, SearchConditionVo searchConditionVo) {
@@ -46,9 +46,9 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 			// 楽天商品検索
 			productInfoVo = this.getRakutenProductInfo(searchConditionVo);
 			
-			for(ItemVo target : productInfoVo.getItems()){
-				target.setGenreName(this.getRakutenGenreName(target.getGenreId()));
-			}
+//			for(ItemVo target : productInfoVo.getItems()){
+//				target.setGenreName(this.getRakutenGenreName(target.getGenreId()));
+//			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -75,11 +75,11 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 			StringBuilder requestPath = new StringBuilder("https://app.rakuten.co.jp/services/api/IchibaItem/Search/20140222?format=json");
 			// キーワード
 			if(StringUtils.isNotBlank(searchConditionVo.getKeyword())){
-				requestPath.append("&keyword=" + URLEncoder.encode(searchConditionVo.getKeyword(), "UTF-8"));
+				requestPath.append("&keyword=" + searchConditionVo.getKeyword());
 			}
 			// ジャンルID
 			if(StringUtils.isNotBlank(searchConditionVo.getGenreId())){
-				requestPath.append("&genreId=" + URLEncoder.encode(searchConditionVo.getGenreId(), "UTF-8"));
+				requestPath.append("&genreId=" + searchConditionVo.getGenreId());
 			}
 			// 検索件数
 			requestPath.append("&hits=" + Integer.toString(PAGE_NUM))
@@ -87,9 +87,12 @@ public class ProductInfoServiceImpl implements ProductInfoService{
 			.append("&page=" + searchConditionVo.getPage())
 			// 取得項目
 			.append("&elements=" + elements)
+			// フォーマットバージョン
 			.append("&formatVersion=2")
 			// イメージフラグ イメージが存在するもののみ検索
 			.append("&imageFlag=1")
+			// 販売可能商品のみ
+			.append("&availability=1")
 			// アプリID
 			.append("&applicationId=" + DEVELOPER_ID)
 			// アフィリエイトID

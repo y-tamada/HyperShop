@@ -1,25 +1,27 @@
 			<ul class="productList" th:if="${itemList != null}">
 				<li class="productInfo" th:each="productInfo : ${itemList}" th:object="${productInfo}" th:attr="data-value=${productInfoStat.index}" style="display:none">
-					<div class="mainInfo">
-						<p class="mainImage">
-							<a th:href="*{affiliateUrl}" target="_blank"><img th:src="*{mediumImageUrls[0]}" th:alt="*{itemName}"/></a>
-						</p>
-						<div class="iteminfo clearfix">
-							<p class="shopName" th:text="*{shopName}">shop1</p>
-							<p class="productName" th:text="*{itemName}">item1</p>
-							<p class="price">¥<span th:text="*{#numbers.formatInteger(itemPrice,1,'COMMA')}">1000</span><span class="tax" th:text="*{taxFlag}">税込</span></p>
-							<p class="genre" th:text="*{genreName}">ベルト</p>
-							<div class="ratingStarArea">
-								<select name="ratingStar">
-								  <option value="3" th:value="*{#numbers.formatInteger(reviewAverage,1,'POINT')}">3</option>
-								  <option value="2">2</option>
-								  <option value="3">3</option>
-								  <option value="4">4</option>
-								  <option value="5">5</option>
-								</select>
+					<a class="productLink" th:href="*{affiliateUrl}" target="_blank">
+						<div class="mainInfo">
+							<p class="mainImage">
+								<img th:src="*{mediumImageUrls[0]}" th:alt="*{itemName}"/>
+							</p>
+							<div class="iteminfo clearfix">
+								<p class="shopName" th:text="*{shopName}">shop1</p>
+								<p class="productName" th:text="*{itemName}">item1</p>
+								<p class="price">¥<span th:text="*{#numbers.formatInteger(itemPrice,1,'COMMA')}">1000</span><span class="tax" th:text="*{taxFlag}">税込</span></p>
+<!-- 								<p class="genre" th:text="*{genreName}">ベルト</p> -->
+								<div class="ratingStarArea">
+									<select name="ratingStar">
+									  <option value="3" th:value="*{#numbers.formatInteger(reviewAverage,1,'POINT')}">3</option>
+									  <option value="2">2</option>
+									  <option value="3">3</option>
+									  <option value="4">4</option>
+									  <option value="5">5</option>
+									</select>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 					<div class="moreitem" style="display: none; width: 390px;">
 						<div class="container">
 							<ul>

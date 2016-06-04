@@ -39,13 +39,6 @@ $(document).ready(function(){
 		ajaxSearch(page+1);
 	});
 	
-	$(document).on("mouseenter", ".mainInfo", function(){
-		$(this).addClass("emphasis");
-	});
-	
-	$(document).on("mouseleave", ".mainInfo", function(){
-		$(this).removeClass("emphasis");
-	});
 });
 
 function ajaxSearch(page){
@@ -61,39 +54,14 @@ function ajaxSearch(page){
 		success: function(data){
 			$("#productListArea ul").remove();
 			$("#pageValue").remove();
-			$("#productListArea").append(data);
+			$("#productListArea").prepend(data);
 		},
 		complete: function(){
 			$('.loader-inner').hide();
 			
+			$(".productListArea").show();
+			
 			$(".productInfo").each(function(){
-				var index = $(this).attr("data-value");
-				switch(index % 7){
-				case 0:
-					$(this).find(".ratingStarArea").addClass("yellowSter");
-					break;
-				case 1:
-					$(this).find(".ratingStarArea").addClass("blueSter");
-					break;
-				case 2:
-					$(this).find(".ratingStarArea").addClass("greenSter");
-					break;
-				case 3:
-					$(this).find(".ratingStarArea").addClass("redSter");
-					break;
-				case 4:
-					$(this).find(".ratingStarArea").addClass("orangeSter");
-					break;
-				case 5:
-					$(this).find(".ratingStarArea").addClass("purpleSter");
-					break;
-				case 6:
-					$(this).find(".ratingStarArea").addClass("aitetuSter");
-					break;
-				default:
-					$(this).find("ratingStarArea").addClass("panelBlue");
-					break;
-				}
 				
 				$(this).fadeIn("slow");
 				
@@ -143,22 +111,22 @@ function setPagenation(){
 	
 	for(var i = 1; i < pageCount + 1; i++){
 		
-		if(currentPage <= 10){
-			if(i < 21){
+		if(currentPage <= 9){
+			if(i < 18){
 				li = "<li class='pageButton'><a href='javascript:void(0)'>" + i + "</a><input type='hidden' value='" + i + "'/></li>";
-			}else if(i == 21){
+			}else if(i == 18){
 				li = "<li class='ellipsis'>…</li>";
 			}else{
 				if(i == pageCount){
 					li = "<li class='pageButton'><a href='javascript:void(0)'>" + i + "</a><input type='hidden' value='" + i + "'/></li>";
 				}
 			}
-		}else if(currentPage > 10 && currentPage < pageCount - 9){
+		}else if(currentPage > 9 && currentPage < pageCount - 8){
 			if(i == 1){
 				li = "<li class='pageButton'><a href='javascript:void(0)'>" + i + "</a><input type='hidden' value='" + i + "'/></li>";
 			}else if(i == 2){
 				li = "<li class='ellipsis'>…</li>";
-			}else if(i > currentPage-9 && i < currentPage+10){
+			}else if(i > currentPage-8 && i < currentPage+8){
 				li = "<li class='pageButton'><a href='javascript:void(0)'>" + i + "</a><input type='hidden' value='" + i + "'/></li>";
 			}else if(i == pageCount-1){
 				li = "<li class='ellipsis'>…</li>";
@@ -172,7 +140,7 @@ function setPagenation(){
 				li = "<li class='pageButton'><a href='javascript:void(0)'>" + i + "</a><input type='hidden' value='" + i + "'/></li>";
 			}else if(i == 2){
 				li = "<li class='ellipsis'>…</li>";
-			}else if(i > currentPage -(20-(pageCount - currentPage))){
+			}else if(i > currentPage -(17-(pageCount - currentPage))){
 				li = "<li class='pageButton'><a href='javascript:void(0)'>" + i + "</a><input type='hidden' value='" + i + "'/></li>";
 			}
 		}

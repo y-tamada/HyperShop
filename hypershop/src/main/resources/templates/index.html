@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/lib/fontawesome-stars.css}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/lib/loaders.min.css}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
-<link rel="stylesheet" type="text/css" th:href="@{/css/product_list.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/font/hyperfont.css}"/>
 
 <title>Hyper Shop</title>
 </head>
@@ -16,70 +16,116 @@
 	<div class="wrapper">
 		<header>
 			<h1><img th:src="@{/image/logo/main_logo_hoshi.png}" alt="HyperShop"/></h1>
+			<div class="searchArea">
+				<div class="searchInput">
+					<input type="text" name="keyword" onkeypress="enterSearch(event.keyCode);" placeholder="キーワードで商品を検索する"/>
+				</div>
+				<div class="searchBtn">
+					<a href="javascript:void(0);" id="productSearch"><img th:src="@{/image/button/search_button.png}" alt="search!!!"/></a>
+				</div>
+			</div>
 		</header>
-		<section class="searchArea">
-			<div class="searchInput">
-				<input type="text" name="keyword" onkeypress="enterSearch(event.keyCode);" placeholder="キーワードで商品を検索する"/>
-			</div>
-			<div class="searchBtn">
-				<a href="javascript:void(0);" id="productSearch"><img th:src="@{/image/button/search_button.png}" alt="search!!!"/></a>
-			</div>
-		</section>
-		<section class="productListArea" id="productListArea">
-			<ul class="productList" th:remove="all">
-				<li class="productInfo">
-					<div class="mainInfo">
-						<p class="mainImage"><a href="/coordinate/?cdid=7080534"><img class="" src="/a/a" alt="" width="215" height="215"/></a></p>
-						<div class="iteminfo clearfix">
-							<p class="shopName">aaaaa</p>
-							<p class="productName"></p>
-							<p class="price">¥637<span class="tax">税込</span></p>
-							<p class="genre">ccccc</p>
-							<div class="ratingStarArea">
-								<select name="ratingStar">
-								  <option value="3">3</option>
-								  <option value="2">2</option>
-								  <option value="3">3</option>
-								  <option value="4">4</option>
-								  <option value="5">5</option>
+		<section class="mainContents">
+			<div class="sideMenuArea">
+				<div class="genreArea">
+					<h3 class="genreTitle">ジャンル</h3>
+					<ul class="genreList">
+						<li id="101240"><a class="genre" href="javascript:void(0)"><i class="ico-tablet"></i><span>電子書籍</span></a></li>
+						<li id="100804"><a class="genre" href="javascript:void(0)"><i class="ico-man-woman"></i><span>ファッション</span></a></li>
+						<li id="101164"><a class="genre" href="javascript:void(0)"><i class="ico-tv"></i><span>家電・パソコン・通信</span></a></li>
+						<li id="100533"><a class="genre" href="javascript:void(0)"><i class="ico-spoon-knife"></i><span>食品・飲料・お酒</span></a></li>
+						<li id="215783"><a class="genre" href="javascript:void(0)"><i class="ico-mug"></i><span>インテリア・日用雑貨</span></a></li>
+						<li id="216129"><a class="genre" href="javascript:void(0)"><i class="ico-baseball-set"></i><span>スポーツ・アウトドア</span></a></li>
+						<li id="101070"><a class="genre" href="javascript:void(0)"><i class="ico-heart"></i><span>美容・健康</span></a></li>
+						<li id="100938"><a class="genre" href="javascript:void(0)"><i class="ico-child_friendly"></i><span>キッズ・ベビー・玩具</span></a></li>
+						<li id="100316"><a class="genre" href="javascript:void(0)"><i class="ico-pets"></i><span>ペット・花・DIY</span></a></li>
+						<li id="100026"><a class="genre" href="javascript:void(0)"><i class="ico-game-controller"></i><span>本・音楽・ゲーム</span></a></li>
+						<li id="216131"><a class="genre" href="javascript:void(0)"><i class="ico-directions_car"></i><span>車・バイク</span></a></li>
+						<li id="216131">
+							<a class="genre" href="javascript:void(0)"><i class="ico-cog"></i><span>設定</span></a>
+							<div class="configSelect" style="display:none">
+								<select class="custom-select">
+									<option>パターン1</option>
+									<option>パターン2</option>
 								</select>
 							</div>
-						</div>
-					</div>
-					<div class="moreitem" style="display: none; width: 390px;">
-						<div class="container">
-							<ul>
-								<li>
-									<a href="/?c=gr&amp;did=24468549" class="clearfix">
-										<p class="thumbnail"><img src="aa/aa" alt="aa" width="33" height="40"/></p>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</li>
-			</ul>
-			<div id="pageValue">
-				<input type="hidden" id="currentPage" value="1"/>
-				<input type="hidden" id="count" value="0"/>
-				<input type="hidden" id="pageCount" value="0"/>
+						</li>
+					</ul>
+				</div>
+				<div class="genreArea_2">
+					<h3 class="genreTitle">ジャンル</h3>
+					<ul class="genreList">
+						<li id="101240" class="ebook"><a class="genre" href="javascript:void(0)"><i class="ico-tablet"></i></a></li>
+						<li id="100804" class="fashion"><a class="genre" href="javascript:void(0)"><i class="ico-man-woman"></i></a></li>
+						<li id="101164" class="electronics"><a class="genre" href="javascript:void(0)"><i class="ico-tv"></i></a></li>
+						<li id="100533" class="food"><a class="genre" href="javascript:void(0)"><i class="ico-spoon-knife"></i></a></li>
+						<li id="215783" class="interior"><a class="genre" href="javascript:void(0)"><i class="ico-mug"></i></a></li>
+						<li id="216129" class="sport"><a class="genre" href="javascript:void(0)"><i class="ico-baseball-set"></i></a></li>
+						<li id="101070" class="health"><a class="genre" href="javascript:void(0)"><i class="ico-heart"></i></a></li>
+						<li id="100938" class="kids"><a class="genre" href="javascript:void(0)"><i class="ico-child_friendly"></i></a></li>
+						<li id="100316" class="pet"><a class="genre" href="javascript:void(0)"><i class="ico-pets"></i></a></li>
+						<li id="100026" class="game"><a class="genre" href="javascript:void(0)"><i class="ico-game-controller"></i></a></li>
+						<li id="216131" class="car"><a class="genre" href="javascript:void(0)"><i class="ico-directions_car"></i></a></li>
+						<li id="216131" class="config"><a class="genre" href="javascript:void(0)"><i class="ico-cog"></i></a></li>
+					</ul>
+				</div>
 			</div>
-		</section>
-		<section class="pagerArea" style="display:none">
-			<div class="pageCountWrapper">
-				<p class="pageCount">page 1 of 100</p>
+			<div class="productListArea" id="productListArea" style="display:none">
+				<ul class="productList" th:remove="all">
+					<li class="productInfo">
+						<div class="mainInfo">
+							<p class="mainImage"><a href="/coordinate/?cdid=7080534"><img class="" src="/a/a" alt="" width="215" height="215"/></a></p>
+							<div class="iteminfo clearfix">
+								<p class="shopName">aaaaa</p>
+								<p class="productName"></p>
+								<p class="price">¥637<span class="tax">税込</span></p>
+								<p class="genre">ccccc</p>
+								<div class="ratingStarArea">
+									<select name="ratingStar">
+									  <option value="3">3</option>
+									  <option value="2">2</option>
+									  <option value="3">3</option>
+									  <option value="4">4</option>
+									  <option value="5">5</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="moreitem" style="display: none; width: 390px;">
+							<div class="container">
+								<ul>
+									<li>
+										<a href="/?c=gr&amp;did=24468549" class="clearfix">
+											<p class="thumbnail"><img src="aa/aa" alt="aa" width="33" height="40"/></p>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div id="pageValue">
+					<input type="hidden" id="currentPage" value="1"/>
+					<input type="hidden" id="count" value="0"/>
+					<input type="hidden" id="pageCount" value="0"/>
+				</div>
+				<div class="pagerArea" style="display:none">
+					<div class="pageCountWrapper">
+						<p class="pageCount">page 1 of 100</p>
+					</div>
+					<div class="pagenation">
+					<p class="prev uiDisable" id="prevButton"><a rel="prev" href="javascript:void(0)">＜</a></p>
+						<ol class="pageButtonArea">
+							<li class="pageButton"><a href="javascript:void(0)">1</a></li>
+							<li class="pageButton"><a href="javascript:void(0)">2</a></li>
+							<li class="pageButton"><a href="javascript:void(0)">3</a></li>
+							<li class="ellipsis">…</li>
+							<li class="pageButton"><a href="javascript:void(0)">10</a></li>
+						</ol>
+			    	<p class="next" id="nextButton"><a rel="next" href="javascript:void(0)">＞</a></p>
+		    	</div>
+				</div>
 			</div>
-			<div class="pagenation">
-			<p class="prev uiDisable" id="prevButton"><a rel="prev" href="javascript:void(0)">＜</a></p>
-				<ol class="pageButtonArea">
-					<li class="pageButton"><a href="javascript:void(0)">1</a></li>
-					<li class="pageButton"><a href="javascript:void(0)">2</a></li>
-					<li class="pageButton"><a href="javascript:void(0)">3</a></li>
-					<li class="ellipsis">…</li>
-					<li class="pageButton"><a href="javascript:void(0)">10</a></li>
-				</ol>
-	    	<p class="next" id="nextButton"><a rel="next" href="javascript:void(0)">＞</a></p>
-    	</div>
 		</section>
 		<div class="hiddenValues">
 			<input id="contextPath" type="hidden" th:value="@{/}"/>
