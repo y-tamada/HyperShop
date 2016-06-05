@@ -21,7 +21,7 @@
 					<input type="text" name="keyword" onkeypress="enterSearch(event.keyCode);" placeholder="キーワードで商品を検索する"/>
 				</div>
 				<div class="searchBtn">
-					<a href="javascript:void(0);" id="productSearch"><img th:src="@{/image/button/search_button.png}" alt="search!!!"/></a>
+					<a href="javascript:void(0);" id="productSearch"><i class="ico-"></i></a>
 				</div>
 			</div>
 		</header>
@@ -29,44 +29,52 @@
 			<div class="sideMenuArea">
 				<div class="genreArea">
 					<h3 class="genreTitle">ジャンル</h3>
-					<ul class="genreList">
-						<li id="101240"><a class="genre" href="javascript:void(0)"><i class="ico-tablet"></i><span>電子書籍</span></a></li>
-						<li id="100804"><a class="genre" href="javascript:void(0)"><i class="ico-man-woman"></i><span>ファッション</span></a></li>
-						<li id="101164"><a class="genre" href="javascript:void(0)"><i class="ico-tv"></i><span>家電・パソコン・通信</span></a></li>
-						<li id="100533"><a class="genre" href="javascript:void(0)"><i class="ico-spoon-knife"></i><span>食品・飲料・お酒</span></a></li>
-						<li id="215783"><a class="genre" href="javascript:void(0)"><i class="ico-mug"></i><span>インテリア・日用雑貨</span></a></li>
-						<li id="216129"><a class="genre" href="javascript:void(0)"><i class="ico-baseball-set"></i><span>スポーツ・アウトドア</span></a></li>
-						<li id="101070"><a class="genre" href="javascript:void(0)"><i class="ico-heart"></i><span>美容・健康</span></a></li>
-						<li id="100938"><a class="genre" href="javascript:void(0)"><i class="ico-child_friendly"></i><span>キッズ・ベビー・玩具</span></a></li>
-						<li id="100316"><a class="genre" href="javascript:void(0)"><i class="ico-pets"></i><span>ペット・花・DIY</span></a></li>
-						<li id="100026"><a class="genre" href="javascript:void(0)"><i class="ico-game-controller"></i><span>本・音楽・ゲーム</span></a></li>
-						<li id="216131"><a class="genre" href="javascript:void(0)"><i class="ico-directions_car"></i><span>車・バイク</span></a></li>
-						<li id="216131">
+					<ul class="genreList" id="genreList">
+						<li class="parentsGenre" id="101240"><a class="genre" href="javascript:void(0)"><i class="ico-tablet"></i><span>電子書籍</span></a></li>
+						<li class="parentsGenre" id="100804"><a class="genre" href="javascript:void(0)"><i class="ico-man-woman"></i><span>ファッション</span></a></li>
+						<li class="parentsGenre" id="101164"><a class="genre" href="javascript:void(0)"><i class="ico-tv"></i><span>家電・パソコン・通信</span></a></li>
+						<li class="parentsGenre" id="100533"><a class="genre" href="javascript:void(0)"><i class="ico-spoon-knife"></i><span>食品・飲料・お酒</span></a></li>
+						<li class="parentsGenre" id="215783"><a class="genre" href="javascript:void(0)"><i class="ico-mug"></i><span>インテリア・日用雑貨</span></a></li>
+						<li class="parentsGenre" id="216129"><a class="genre" href="javascript:void(0)"><i class="ico-baseball-set"></i><span>スポーツ・アウトドア</span></a></li>
+						<li class="parentsGenre" id="101070"><a class="genre" href="javascript:void(0)"><i class="ico-heart"></i><span>美容・健康</span></a></li>
+						<li class="parentsGenre" id="100938"><a class="genre" href="javascript:void(0)"><i class="ico-child_friendly"></i><span>キッズ・ベビー・玩具</span></a></li>
+						<li class="parentsGenre" id="100316"><a class="genre" href="javascript:void(0)"><i class="ico-pets"></i><span>ペット・花・DIY</span></a></li>
+						<li class="parentsGenre" id="100026"><a class="genre" href="javascript:void(0)"><i class="ico-game-controller"></i><span>本・音楽・ゲーム</span></a></li>
+						<li class="parentsGenre" id="216131"><a class="genre" href="javascript:void(0)"><i class="ico-directions_car"></i><span>車・バイク</span></a></li>
+						<li class="parentsGenre" id="config">
 							<a class="genre" href="javascript:void(0)"><i class="ico-cog"></i><span>設定</span></a>
 							<div class="configSelect" style="display:none">
 								<select class="custom-select">
-									<option>パターン1</option>
-									<option>パターン2</option>
+									<option value="1">パターン1</option>
+									<option value="2">パターン2</option>
 								</select>
 							</div>
 						</li>
 					</ul>
 				</div>
-				<div class="genreArea_2">
+				<div class="genreArea_2" style="display:none">
 					<h3 class="genreTitle">ジャンル</h3>
-					<ul class="genreList">
-						<li id="101240" class="ebook"><a class="genre" href="javascript:void(0)"><i class="ico-tablet"></i></a></li>
-						<li id="100804" class="fashion"><a class="genre" href="javascript:void(0)"><i class="ico-man-woman"></i></a></li>
-						<li id="101164" class="electronics"><a class="genre" href="javascript:void(0)"><i class="ico-tv"></i></a></li>
-						<li id="100533" class="food"><a class="genre" href="javascript:void(0)"><i class="ico-spoon-knife"></i></a></li>
-						<li id="215783" class="interior"><a class="genre" href="javascript:void(0)"><i class="ico-mug"></i></a></li>
-						<li id="216129" class="sport"><a class="genre" href="javascript:void(0)"><i class="ico-baseball-set"></i></a></li>
-						<li id="101070" class="health"><a class="genre" href="javascript:void(0)"><i class="ico-heart"></i></a></li>
-						<li id="100938" class="kids"><a class="genre" href="javascript:void(0)"><i class="ico-child_friendly"></i></a></li>
-						<li id="100316" class="pet"><a class="genre" href="javascript:void(0)"><i class="ico-pets"></i></a></li>
-						<li id="100026" class="game"><a class="genre" href="javascript:void(0)"><i class="ico-game-controller"></i></a></li>
-						<li id="216131" class="car"><a class="genre" href="javascript:void(0)"><i class="ico-directions_car"></i></a></li>
-						<li id="216131" class="config"><a class="genre" href="javascript:void(0)"><i class="ico-cog"></i></a></li>
+					<ul class="genreList" id="genreList_2">
+						<li id="101240" class="parentsGenre ebook"><a class="genre" href="javascript:void(0)"><i class="ico-tablet"></i></a></li>
+						<li id="100804" class="parentsGenre fashion"><a class="genre" href="javascript:void(0)"><i class="ico-man-woman"></i></a></li>
+						<li id="101164" class="parentsGenre electronics"><a class="genre" href="javascript:void(0)"><i class="ico-tv"></i></a></li>
+						<li id="100533" class="parentsGenre food"><a class="genre" href="javascript:void(0)"><i class="ico-spoon-knife"></i></a></li>
+						<li id="215783" class="parentsGenre iparentsGenre nterior"><a class="genre" href="javascript:void(0)"><i class="ico-mug"></i></a></li>
+						<li id="216129" class="parentsGenre sport"><a class="genre" href="javascript:void(0)"><i class="ico-baseball-set"></i></a></li>
+						<li id="101070" class="parentsGenre health"><a class="genre" href="javascript:void(0)"><i class="ico-heart"></i></a></li>
+						<li id="100938" class="parentsGenre kids"><a class="genre" href="javascript:void(0)"><i class="ico-child_friendly"></i></a></li>
+						<li id="100316" class="parentsGenre pet"><a class="genre" href="javascript:void(0)"><i class="ico-pets"></i></a></li>
+						<li id="100026" class="parentsGenre game"><a class="genre" href="javascript:void(0)"><i class="ico-game-controller"></i></a></li>
+						<li id="216131" class="parentsGenre car"><a class="genre" href="javascript:void(0)"><i class="ico-directions_car"></i></a></li>
+						<li id="config" class="parentsGenre config">
+							<a class="genre" href="javascript:void(0)"><i class="ico-cog"></i></a>
+							<div class="configSelect" style="display:none">
+								<select class="custom-select">
+									<option value="1">パターン1</option>
+									<option value="2">パターン2</option>
+								</select>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -129,6 +137,13 @@
 		</section>
 		<div class="hiddenValues">
 			<input id="contextPath" type="hidden" th:value="@{/}"/>
+		</div>
+		<div class="hyperSelect" th:remove="all">
+			<div class="triangle"></div>
+			<ul class="hyperSelectList">
+				<li class="option"><a href='javascript:void(0);'>option1</a></li>
+				<li class="option"><a href='javascript:void(0);'>option2</a></li>
+			</ul>
 		</div>
 		<footer></footer>
 		<div class="loader-inner ball-clip-rotate-pulse"></div>

@@ -106,22 +106,23 @@ $s-img-size:64px;
 					border-bottom: 1px solid white;
 				}
 				.genreList{
-					li{
+						background-color: #333;
+					li.parentsGenre{
 						height: 35px;
 						line-height: 35px;
 						padding: 0px 15px;
 						background-color: #455A64;
-						a{
+						>a{
 							color: white;
 							width: 100%;
     					display: block;
-							i{
+							>i{
 								font-size: larger;
     						margin-right: 10px;
 							}
 						}
 					}
-					li:hover{
+					li.parentsGenre:hover{
 						transform: translate(15px, -5px);
 						-webkit-transform: translate(15px, -5px);  
     				-moz-transform: translate(15px, -5px);  
@@ -132,7 +133,7 @@ $s-img-size:64px;
 				}
 			}
 			.genreArea_2{
-				margin: 20px 20px;
+				margin: 0px 20px 20px;
     		background: #455A64;
 				.genreTitle{
 					padding-top: 10px;
@@ -378,6 +379,45 @@ $s-img-size:64px;
 			}
 		}
 
+	}
+	
+	.hyperSelect{
+		position: absolute;
+    width: 80%;
+		.triangleTop{
+			width: 0;
+			height: 0;
+			border: 10px solid transparent;
+			border-bottom: 10px solid #252525;
+			margin-left: auto;
+    	margin-right: 20px;
+		}
+		.triangleLeft{
+			width: 0;
+			height: 0;
+			border: 10px solid transparent;
+			border-right: 15px solid #252525;
+			margin-left: -20px;
+    	margin-bottom: -25px;
+		}
+		.hyperSelectList{
+			background-color: #252525;
+			.option{
+				text-align: center;
+    		line-height: 35px;
+    		border-bottom: 1px solid #666;
+				>a{
+					color: white;
+					display: block
+				}
+				>a:hover{
+					background-color: #666;
+				}
+			}
+			.option:last-child{
+				border-bottom: none;
+			}
+		}
 	}
 
 	footer{

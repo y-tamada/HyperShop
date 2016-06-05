@@ -14,6 +14,40 @@ $(document).ready(function(){
 		});
 	});
 	
+	$("#genreList li").mouseenter(function(){
+		createCustomSelect($(this), "left");
+	}).mouseleave(function(){
+		$(".hyperSelect").remove();
+	});
+	
+	$("#genreList_2 li").click(function(){
+		event.stopPropagation();
+		
+		createCustomSelect($(this), "left");
+	});
+	
+	$(document).on("click", "#sel-config li.option", function(){
+		var value = $(this).attr("data-value");
+		if(value == 1){
+			$(".genreArea").show();
+			$(".genreArea_2").hide();
+		}else{
+			$(".genreArea").hide();
+			$(".genreArea_2").show();
+		}
+	});
+	
+	$(document).on("click", "#sel-config li.option", function(){
+		var value = $(this).attr("data-value");
+		if(value == 1){
+			$(".genreArea").show();
+			$(".genreArea_2").hide();
+		}else{
+			$(".genreArea").hide();
+			$(".genreArea_2").show();
+		}
+	});
+	
 	$("#productSearch").on("click", function(){
 		ajaxSearch(1);
 	});
@@ -38,7 +72,6 @@ $(document).ready(function(){
 		
 		ajaxSearch(page+1);
 	});
-	
 });
 
 function ajaxSearch(page){
@@ -153,5 +186,45 @@ function setPagenation(){
 		
 		li="";
 	}
+}
+
+function createCustomSelect($obj, type){
+	
+	$(".hyperSelect").remove();
+	
+	// ターゲットの位置座標を取得
+	var position = $obj.position();
+	// 作成するセレクトリストにつけるidを作成
+	var id = "sel-" + $obj.attr("id");
+	// 親オブジェクトを作成
+	var $select = $("<div class='hyperSelect' id='" + id + "'>");
+	// リストを格納するオブジェクトを生成
+	var $ul = $("<ul class='hyperSelectList'></ul>");
+	
+	// ターゲットのオプションからリストの各要素を作成し、ulにアペンド
+	$obj.find("option").each(function(){
+		var li = "<li class='option' data-value='" + $(this).val() + "'><a href='javascript:void(0);'>" + $(this).text() + "</a></li>";
+		$ul.append(li);
+	});
+	
+	// セレクトリストを出す位置により、座標・三角形の場所を決める
+	if(type == "bottom"){
+		var paddingBottom = Number($obj.css("padding-bottom").replace("px", ""));
+		$select.append("<div class='triangleTop'></div>");
+		$select.append($ul);
+		$select.css({'top':position.top + $obj.height + 2 +paddingBottom + px, 'left' : position.left});
+	}else{
+		var paddingRight = Number($obj.css("padding-right").replace("px", ""));
+		$select.append("<div class='triangleLeft'></div>");
+		$select.append($ul);
+		$select.css({'top':position.top + 10 +'px', 'left' : position.left + $obj.width() + paddingRight + 20 + "px" });
+	}
+	
+	$obj.append($select);
+	
+	// セレクトボックスを削除するイベントをバインドする
+	$('div:not(.hyperSelect)').bind("click", function(){
+		$(".hyperSelect").remove();
+	});
 }
 

@@ -90,22 +90,25 @@
     background-color: #455A64;
     border-bottom: 1px solid white;
   }
-  .mainContents .sideMenuArea .genreArea .genreList li {
+  .mainContents .sideMenuArea .genreArea .genreList {
+    background-color: #333;
+  }
+  .mainContents .sideMenuArea .genreArea .genreList li.parentsGenre {
     height: 35px;
     line-height: 35px;
     padding: 0px 15px;
     background-color: #455A64;
   }
-  .mainContents .sideMenuArea .genreArea .genreList li a {
+  .mainContents .sideMenuArea .genreArea .genreList li.parentsGenre > a {
     color: white;
     width: 100%;
     display: block;
   }
-  .mainContents .sideMenuArea .genreArea .genreList li a i {
+  .mainContents .sideMenuArea .genreArea .genreList li.parentsGenre > a > i {
     font-size: larger;
     margin-right: 10px;
   }
-  .mainContents .sideMenuArea .genreArea .genreList li:hover {
+  .mainContents .sideMenuArea .genreArea .genreList li.parentsGenre:hover {
     transform: translate(15px, -5px);
     -webkit-transform: translate(15px, -5px);
     -moz-transform: translate(15px, -5px);
@@ -114,7 +117,7 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   }
   .mainContents .sideMenuArea .genreArea_2 {
-    margin: 20px 20px;
+    margin: 0px 20px 20px;
     background: #455A64;
   }
   .mainContents .sideMenuArea .genreArea_2 .genreTitle {
@@ -348,6 +351,45 @@
   .loader-inner div:last-child {
     top: 6px;
     left: 11px;
+  }
+
+  .hyperSelect {
+    position: absolute;
+    width: 80%;
+  }
+  .hyperSelect .triangleTop {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #252525;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+  .hyperSelect .triangleLeft {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right: 15px solid #252525;
+    margin-left: -20px;
+    margin-bottom: -25px;
+  }
+  .hyperSelect .hyperSelectList {
+    background-color: #252525;
+  }
+  .hyperSelect .hyperSelectList .option {
+    text-align: center;
+    line-height: 35px;
+    border-bottom: 1px solid #666;
+  }
+  .hyperSelect .hyperSelectList .option > a {
+    color: white;
+    display: block;
+  }
+  .hyperSelect .hyperSelectList .option > a:hover {
+    background-color: #666;
+  }
+  .hyperSelect .hyperSelectList .option:last-child {
+    border-bottom: none;
   }
 
   footer {
