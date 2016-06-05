@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'hyperfont';
-    src:    url('fonts/hyperfont.eot?ka8u08');
-    src:    url('fonts/hyperfont.eot?ka8u08#iefix') format('embedded-opentype'),
-        url('fonts/hyperfont.ttf?ka8u08') format('truetype'),
-        url('fonts/hyperfont.woff?ka8u08') format('woff'),
-        url('fonts/hyperfont.svg?ka8u08#hyperfont') format('svg');
+    src:    url('fonts/hyperfont.eot?3huuav');
+    src:    url('fonts/hyperfont.eot?3huuav#iefix') format('embedded-opentype'),
+        url('fonts/hyperfont.ttf?3huuav') format('truetype'),
+        url('fonts/hyperfont.woff?3huuav') format('woff'),
+        url('fonts/hyperfont.svg?3huuav#hyperfont') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -18,50 +18,30 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
+    
+    /* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
 
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-.ico-baseball-set:before {
-    content: "\e903";
+.ico-light-bulb:before {
+    content: "\f000";
 }
-.ico-baseball-set2:before {
-    content: "\e904";
+.ico-lock:before {
+    content: "\f06a";
 }
-.ico-beach_access:before {
-    content: "\eb3e";
-}
-.ico-child_friendly:before {
-    content: "\eb42";
-}
-.ico-directions_bike:before {
-    content: "\e52f";
-}
-.ico-directions_car:before {
-    content: "\e531";
-}
-.ico-restaurant_menu:before {
-    content: "\e561";
-}
-.ico-motorcycle:before {
-    content: "\e91b";
-}
-.ico-pets:before {
-    content: "\e91d";
-}
-.ico-wc:before {
-    content: "\e63d";
-}
-.ico-aircraft:before {
-    content: "\e900";
-}
-.ico-briefcase:before {
-    content: "\e901";
-}
-.ico-game-controller:before {
-    content: "\e902";
+.ico-search:before {
+    content: "\f02e";
 }
 .ico-headphones:before {
     content: "\e910";
@@ -155,5 +135,44 @@
 }
 .ico-youtube2:before {
     content: "\ea9e";
+}
+.ico-baseball-set:before {
+    content: "\e903";
+}
+.ico-baseball-set2:before {
+    content: "\e904";
+}
+.ico-beach_access:before {
+    content: "\eb3e";
+}
+.ico-child_friendly:before {
+    content: "\eb42";
+}
+.ico-directions_bike:before {
+    content: "\e52f";
+}
+.ico-directions_car:before {
+    content: "\e531";
+}
+.ico-restaurant_menu:before {
+    content: "\e561";
+}
+.ico-motorcycle:before {
+    content: "\e91b";
+}
+.ico-pets:before {
+    content: "\e91d";
+}
+.ico-wc:before {
+    content: "\e63d";
+}
+.ico-aircraft:before {
+    content: "\e900";
+}
+.ico-briefcase:before {
+    content: "\e901";
+}
+.ico-game-controller:before {
+    content: "\e902";
 }
 

@@ -43,17 +43,17 @@ header{
 		}
 	}
 	.searchArea{
-		height: 50px;
+		height: 35px;
 		display: flex;
 		margin-top: 40px;
-		width: 65%;
-		margin-left: 20px;
+		width: 50%;
+		margin-left: auto;
 		div{
-			height: inherit;
-			line-height: 46px;
+			height: 100%;
 		}
 		.searchInput{
-			width: 72.8%;
+			width: 90%;
+			height: 35px;
 			input{
 				-webkit-border-radius: 3px;
 				-moz-border-radius: 3px;
@@ -64,8 +64,10 @@ header{
 
 		}
 		.searchBtn{
-			width: 6%;
+			width: 5%;
+			height: 37px;
 			background-color: $hy-gray;
+			line-height: 43px;
 			a{
 				display: block;
 				width: 100%;

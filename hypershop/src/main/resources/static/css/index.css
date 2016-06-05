@@ -25,18 +25,18 @@ header h1 img {
   width: 100%;
 }
 header .searchArea {
-  height: 50px;
+  height: 35px;
   display: flex;
   margin-top: 40px;
-  width: 65%;
-  margin-left: 20px;
+  width: 50%;
+  margin-left: auto;
 }
 header .searchArea div {
-  height: inherit;
-  line-height: 46px;
+  height: 100%;
 }
 header .searchArea .searchInput {
-  width: 72.8%;
+  width: 90%;
+  height: 35px;
 }
 header .searchArea .searchInput input {
   -webkit-border-radius: 3px;
@@ -46,8 +46,10 @@ header .searchArea .searchInput input {
   width: 99%;
 }
 header .searchArea .searchBtn {
-  width: 27.2%;
+  width: 5%;
+  height: 37px;
   background-color: #666;
+  line-height: 43px;
 }
 header .searchArea .searchBtn a {
   display: block;
