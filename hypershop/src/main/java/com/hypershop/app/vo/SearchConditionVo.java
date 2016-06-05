@@ -1,16 +1,15 @@
 package com.hypershop.app.vo;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-
 public class SearchConditionVo {
 
 	/** キーワード */
-	@Max(100)
-	@Min(1)
 	private String keyword;
 	/** ジャンルID */
 	private String genreId;
+	/** ジャンル名 */
+	private String genreName;
+	/** 親ジャンル名 */
+	private String parentsGenreName;
 	/** アイテムコード */
 	private String itemCode;
 	/** shopCode */
@@ -32,6 +31,22 @@ public class SearchConditionVo {
 
 	public void setGenreId(String genreId) {
 		this.genreId = genreId;
+	}
+
+	public String getGenreName() {
+		return genreName;
+	}
+
+	public void setGenreName(String genreName) {
+		this.genreName = genreName;
+	}
+
+	public String getParentsGenreName() {
+		return parentsGenreName;
+	}
+
+	public void setParentsGenreName(String parentsGenreName) {
+		this.parentsGenreName = parentsGenreName;
 	}
 
 	public String getItemCode() {

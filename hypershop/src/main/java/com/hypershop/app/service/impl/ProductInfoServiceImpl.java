@@ -6,7 +6,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.Locale;
 
 import org.apache.commons.lang.StringUtils;
@@ -21,9 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hypershop.app.service.ProductInfoService;
 import com.hypershop.app.vo.GenreWrapperVo;
-import com.hypershop.app.vo.ItemVo;
 import com.hypershop.app.vo.ProductInfoListVo;
-import com.hypershop.app.vo.ProductInfoVo;
 import com.hypershop.app.vo.SearchConditionVo;
 
 @Service

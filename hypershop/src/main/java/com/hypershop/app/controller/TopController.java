@@ -42,17 +42,23 @@ public class TopController {
 	@RequestMapping("/productSearch")
 	public String productSearch(Locale locale, SearchConditionVo searchConditionVo, Model model){
 		
-		ProductInfoListVo productInfoListVo = null;
-		
-		// キーワードがなければ検索しない
-		if(StringUtils.isBlank(searchConditionVo.getKeyword())){
-			logger.info("keyword is blank !!");
+		// キーワードとジャンルIDがなければ検索しない 
+		if(StringUtils.isBlank(searchConditionVo.getKeyword()) && StringUtils.isBlank(searchConditionVo.getGenreId())){
+			logger.info("search condition is blank !!");
 			return "product_list"; 
 		}
 		
+		ProductInfoListVo productInfoListVo = null;
+		
 		productInfoListVo = service.getProductInfo(locale, searchConditionVo);
 		
+		if(StringUtils.isBlank(searchConditionVo.getGenreId())){
+			searchConditionVo.setParentsGenreName("ALL");
+		}
+		
 		model.addAttribute("itemList", productInfoListVo.getItems());
+		model.addAttribute("genreName", searchConditionVo.getGenreName());
+		model.addAttribute("parentsGenreName", searchConditionVo.getParentsGenreName());
 		model.addAttribute("currentPage", searchConditionVo.getPage());
 		model.addAttribute("count", productInfoListVo.getCount());
 		model.addAttribute("pageCount", productInfoListVo.getPageCount());

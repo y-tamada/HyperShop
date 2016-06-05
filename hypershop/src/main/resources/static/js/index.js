@@ -15,6 +15,7 @@ $(document).ready(function(){
 	});
 	
 	$("#genreList li").mouseenter(function(){
+		$("#parentsGenreName").val($(this).find("a.genre span").text());
 		createCustomSelect($(this), "left");
 	}).mouseleave(function(){
 		$(".hyperSelect").remove();
@@ -22,8 +23,16 @@ $(document).ready(function(){
 	
 	$("#genreList_2 li").click(function(){
 		event.stopPropagation();
-		
 		createCustomSelect($(this), "left");
+	}).mouseleave(function(){
+//		$(".hyperSelect").remove();
+	});
+	
+	$(document).on("click", ".genreSelectList li.option", function(){
+		$("#selectedGenreId").val($(this).attr("data-value"));
+		$("#selectedGenreName").val($(this).text());
+
+		ajaxSearch(1);
 	});
 	
 	$(document).on("click", "#sel-config li.option", function(){
@@ -37,7 +46,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	$(document).on("click", "#sel-config li.option", function(){
+	$(document).on("click", "#sel-config2 li.option", function(){
 		var value = $(this).attr("data-value");
 		if(value == 1){
 			$(".genreArea").show();
@@ -82,6 +91,9 @@ function ajaxSearch(page){
 		type: 'post',
 		url: $("#contextPath").val() + 'productSearch',
 		data: { 'keyword' : $("input[name=keyword]").val(), 
+				'genreId' : $("#selectedGenreId").val(),
+				'genreName' : $("#selectedGenreName").val(),
+				'parentsGenreName' : $("#parentsGenreName").val(),
 				'page' : page
 		},
 		success: function(data){
@@ -196,8 +208,9 @@ function createCustomSelect($obj, type){
 	var position = $obj.position();
 	// 作成するセレクトリストにつけるidを作成
 	var id = "sel-" + $obj.attr("id");
+	var className = $obj.find("select").attr("class");
 	// 親オブジェクトを作成
-	var $select = $("<div class='hyperSelect' id='" + id + "'>");
+	var $select = $("<div class='hyperSelect " + className + "' id='" + id + "'>");
 	// リストを格納するオブジェクトを生成
 	var $ul = $("<ul class='hyperSelectList'></ul>");
 	
@@ -217,7 +230,7 @@ function createCustomSelect($obj, type){
 		var paddingRight = Number($obj.css("padding-right").replace("px", ""));
 		$select.append("<div class='triangleLeft'></div>");
 		$select.append($ul);
-		$select.css({'top':position.top + 10 +'px', 'left' : position.left + $obj.width() + paddingRight + 20 + "px" });
+		$select.css({'top': '5px', 'left' : position.left + $obj.width() + "px" });
 	}
 	
 	$obj.append($select);
