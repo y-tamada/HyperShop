@@ -17,6 +17,13 @@ $panel-height:155px;
 $l-img-size:128px;
 $s-img-size:64px;
 
+$facebook:#3B5998;
+$twitter:#00aced;
+$google:#db4a39;
+$line:#5ae628;
+$instagram:#3f729b;
+	
+
 
 body{
 	background-color: #374046;
@@ -203,6 +210,32 @@ header{
 						text-align: center;
 						line-height: normal;
 						display: block;
+					}
+				}
+			}
+		}
+		.snsArea{
+			margin: 20px 20px;
+			.snsButtonList{
+				background-color: #455A64;
+				display: flex;
+				justify-content: center;
+				>li{
+					color: white;
+					margin: 0 10px;
+					&.facebookButton{
+						background-color: $facebook;
+					}
+					&.twitterButton{
+						background-color: $twitter;
+					}
+					&.googleButton{
+						background-color: $google;
+					}
+					>i{
+						margin: 5px;
+						font-size: 45px;
+						line-height: 55px;
 					}
 				}
 			}

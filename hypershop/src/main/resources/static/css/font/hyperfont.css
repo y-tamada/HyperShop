@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'hyperfont';
-    src:    url('fonts/hyperfont.eot?3huuav');
-    src:    url('fonts/hyperfont.eot?3huuav#iefix') format('embedded-opentype'),
-        url('fonts/hyperfont.ttf?3huuav') format('truetype'),
-        url('fonts/hyperfont.woff?3huuav') format('woff'),
-        url('fonts/hyperfont.svg?3huuav#hyperfont') format('svg');
+    src:    url('fonts/hyperfont.eot?9xxexi');
+    src:    url('fonts/hyperfont.eot?9xxexi#iefix') format('embedded-opentype'),
+        url('fonts/hyperfont.ttf?9xxexi') format('truetype'),
+        url('fonts/hyperfont.woff?9xxexi') format('woff'),
+        url('fonts/hyperfont.svg?9xxexi#hyperfont') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -117,6 +117,9 @@
 }
 .ico-checkmark2:before {
     content: "\ea11";
+}
+.ico-google-plus:before {
+    content: "\ea8b";
 }
 .ico-google-plus2:before {
     content: "\ea8c";

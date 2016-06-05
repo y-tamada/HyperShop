@@ -191,6 +191,32 @@ header .searchArea .searchBtn a:hover {
   line-height: normal;
   display: block;
 }
+.mainContents .sideMenuArea .snsArea {
+  margin: 20px 20px;
+}
+.mainContents .sideMenuArea .snsArea .snsButtonList {
+  background-color: #455A64;
+  display: flex;
+  justify-content: center;
+}
+.mainContents .sideMenuArea .snsArea .snsButtonList > li {
+  color: white;
+  margin: 0 10px;
+}
+.mainContents .sideMenuArea .snsArea .snsButtonList > li.facebookButton {
+  background-color: #3B5998;
+}
+.mainContents .sideMenuArea .snsArea .snsButtonList > li.twitterButton {
+  background-color: #00aced;
+}
+.mainContents .sideMenuArea .snsArea .snsButtonList > li.googleButton {
+  background-color: #db4a39;
+}
+.mainContents .sideMenuArea .snsArea .snsButtonList > li > i {
+  margin: 5px;
+  font-size: 45px;
+  line-height: 55px;
+}
 .mainContents .productListArea {
   background: whitesmoke;
   width: 76%;
