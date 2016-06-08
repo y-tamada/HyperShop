@@ -200,8 +200,7 @@ header .searchArea .searchBtn a:hover {
   justify-content: center;
 }
 .mainContents .sideMenuArea .snsArea .snsButtonList > li {
-  color: white;
-  margin: 0 10px;
+  margin: 10px;
 }
 .mainContents .sideMenuArea .snsArea .snsButtonList > li.facebookButton {
   background-color: #3B5998;
@@ -212,10 +211,12 @@ header .searchArea .searchBtn a:hover {
 .mainContents .sideMenuArea .snsArea .snsButtonList > li.googleButton {
   background-color: #db4a39;
 }
-.mainContents .sideMenuArea .snsArea .snsButtonList > li > i {
-  margin: 5px;
+.mainContents .sideMenuArea .snsArea .snsButtonList > li > a {
+  color: white;
+  display: block;
+  margin: 10px;
   font-size: 45px;
-  line-height: 55px;
+  line-height: 45px;
 }
 .mainContents .productListArea {
   background: whitesmoke;

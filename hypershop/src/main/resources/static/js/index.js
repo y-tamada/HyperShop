@@ -99,6 +99,7 @@ function ajaxSearch(page){
 		success: function(data){
 			$("#productListArea ul").remove();
 			$("#pageValue").remove();
+			$("#genreNavi").remove();
 			$("#productListArea").prepend(data);
 		},
 		complete: function(){

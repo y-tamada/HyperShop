@@ -2,6 +2,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="og:title" content="HyperShop" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://hypershop.mybluemix.net/hypershop" />
+<meta property="og:image" content="http://hypershop.mybluemix.net/hypershop/image/logo/ogp_logo.png" />
+
 <link rel="shortcut icon" th:href="@{/image/icon/hohi_icon.png}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/screen.css}"/>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
@@ -183,9 +188,10 @@
 				</div>
 				<div class="snsArea">
 					<ul class="snsButtonList">
-						<li class="facebookButton"><i class="ico-facebook"></i></li>
-						<li class="twitterButton"><i class="ico-twitter"></i></li>
-						<li class="googleButton"><i class="ico-google-plus"></i></li>
+					<div id="fb-root"></div>
+						<li class="facebookButton"><a title="facebookでシェアする" href="http://www.facebook.com/sharer.php?u=http://hypershop.mybluemix.net/hypershop/&amp;t=HyperShop" onclick="window.open(this.href, 'Gwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="ico-facebook"></i></a></li>
+						<li class="twitterButton"><a data-url='http://hypershop.mybluemix.net/hypershop/' href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-count="vertical" data-dnt="true" onclick="window.open(this.href, 'Gwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="ico-twitter"></i></a></li>
+						<li class="googleButton"><a href="https://plus.google.com/share?url=http://hypershop.mybluemix.net/hypershop/" onclick="window.open(this.href, 'Gwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="ico-google-plus"></i></a></li>
 					</ul>
 				</div>
 			</div>

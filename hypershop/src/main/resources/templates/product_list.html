@@ -1,4 +1,4 @@
-			<nav class="genreNavi">＞<span id="parentsGenreName" th:text="${parentsGenreName}"></span><span th:if="!${#strings.isEmpty(genreName)}">＞</span><span id="genreTitle" th:text="${genreName}">genre</span></nav>
+			<nav class="genreNavi" id="genreNavi">＞&nbsp;<span id="parentsGenreName" th:text="${parentsGenreName}"></span><span th:if="!${#strings.isEmpty(genreName)}">&nbsp;＞&nbsp;</span><span id="genreTitle" th:text="${genreName}">genre</span></nav>
 			<ul class="productList" th:if="${itemList != null}">
 				<li class="productInfo" th:each="productInfo : ${itemList}" th:object="${productInfo}" th:attr="data-value=${productInfoStat.index}" style="display:none">
 					<a class="productLink" th:href="*{affiliateUrl}" target="_blank">

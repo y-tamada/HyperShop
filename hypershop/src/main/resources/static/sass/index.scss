@@ -221,8 +221,7 @@ header{
 				display: flex;
 				justify-content: center;
 				>li{
-					color: white;
-					margin: 0 10px;
+					margin: 10px;
 					&.facebookButton{
 						background-color: $facebook;
 					}
@@ -232,10 +231,12 @@ header{
 					&.googleButton{
 						background-color: $google;
 					}
-					>i{
-						margin: 5px;
+					>a{
+						color: white;
+						display: block;
+						margin: 10px;
 						font-size: 45px;
-						line-height: 55px;
+						line-height: 45px;
 					}
 				}
 			}
